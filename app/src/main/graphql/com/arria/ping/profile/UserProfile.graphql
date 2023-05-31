@@ -1,0 +1,19 @@
+query UserProfile{
+  user  {
+    email
+
+    firstName
+
+    lastName
+
+    role
+
+    areas
+    stores
+    states
+    supervisors{
+      supervisorUserID
+      supervisorName
+    }
+  }
+}

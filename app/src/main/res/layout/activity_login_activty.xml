@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        tools:context=".ui.generalview.LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:background="@color/header_color"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+        <ImageView
+                android:id="@+id/back_button"
+                android:layout_marginStart="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_white_back_arrow"
+                android:contentDescription="@string/arria_ping_logo"
+                tools:visibility="visible"
+                android:visibility="gone" />
+
+
+        <ImageView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_login_logo"
+                android:contentDescription="@string/arria_ping_logo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_56sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:orientation="vertical">
+
+
+        <EditText
+                android:id="@+id/edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                tools:text="test@gmail.com"
+                android:background="@drawable/edit_text_border"
+                android:cursorVisible="true"
+                android:fontFamily="@font/sf_ui_text_regular"
+                android:hint="@string/email_text"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:maxLength="70"
+                android:singleLine="true"
+                android:textColor="@color/change_pwd_header_color"
+                android:textColorHint="@color/tab_divider"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="normal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:theme="@style/myTextInputLabel"/>
+
+        <RelativeLayout
+                android:id="@+id/login_error_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+            <TextView
+                    android:id="@+id/login_error_title_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/sf_ui_text_regular"
+                    android:text="@string/email_alert_message"
+                    android:textColor="@color/red"
+                    android:textSize="12sp" />
+
+            <ImageView
+                    android:id="@+id/login_error_img"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/ic_alert"
+                    android:contentDescription="@string/alert_logo" />
+        </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_layout_pswrd"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/edit_text_border"
+                android:fontFamily="@font/sf_ui_text_regular"
+                android:hint="@string/password_text"
+                android:imeOptions="actionDone"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingStart="0dp"
+                android:textColorHint="#bcbec0"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="normal"
+                android:theme="@style/myTextInputLabel"
+                app:boxStrokeColor="@color/white"
+                app:boxStrokeWidth="0dp"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="false"
+                app:hintTextColor="#C0C0C0"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/header_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@null"
+                    android:cursorVisible="true"
+                    android:drawableTint="@color/header_color"
+                    android:fontFamily="@font/sf_ui_text_regular"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:hint="@string/password_text"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword|textNoSuggestions"
+                    android:maxLength="30"
+                    android:textColor="@color/change_pwd_header_color"
+                    android:textColorHint="@color/tab_divider"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="normal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+                android:id="@+id/txt_forget_password"
+                style="@style/text_sub_heading"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                android:text="@string/forget_passowrd"
+                android:textColor="@color/header_color"
+                android:textSize="@dimen/_10sdp" />
+    </LinearLayout>
+
+    <Button
+            android:id="@+id/btn_login"
+            style="@style/button"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:background="@drawable/button_border"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:text="@string/login_text"
+            android:textSize="@dimen/_14ssp" />
+
+    <LinearLayout
+            android:id="@+id/layout_biometric"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45sdp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+        <ImageView
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/finger_print"
+                android:contentDescription="@string/finger_print_logo" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="@string/use_finger_print"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12sdp" />
+
+    </LinearLayout>
+</LinearLayout>

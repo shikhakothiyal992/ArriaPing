@@ -1,0 +1,8 @@
+query SupervisorFilter ($areas:[String!], $states:[String!]) {
+  user  {
+    supervisors (areas:$areas, states:$states) {
+      supervisorUserID
+      supervisorName
+    }
+  }
+}

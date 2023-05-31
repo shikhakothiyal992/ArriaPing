@@ -1,0 +1,281 @@
+query SupervisorDefaultToday ($supervisorNumbers:[String!], $storeNumbers:[String!]) {
+  supervisor {
+    kpis {
+      individualStores (storeNumbers: $storeNumbers,supervisorNumbers: $supervisorNumbers) {
+
+            storeName
+            storeNumber
+            today {
+              sales {
+                goal {
+                  value
+                }
+                variance {
+                  value
+                }
+                actual {
+                  value
+                }
+                displayName
+                status
+              }
+              service {
+                eADT {
+                  goal {
+                    value
+                  }
+                  variance {
+                    value
+                  }
+                  actual {
+                    value
+                  }
+                  displayName
+                  status
+                }
+
+                aot {
+                  goal {
+                    percentage
+                  }
+                  variance {
+                    percentage
+                  }
+                  actual {
+                    percentage
+                  }
+                  displayName
+                  status
+                }
+                otd {
+                  goal {
+                    value
+                  }
+                  variance {
+                    value
+                  }
+                  actual {
+                    value
+                  }
+                  displayName
+                  status
+                }
+                waitTime {
+                  goal {
+                    value
+                  }
+                  variance {
+                    value
+                  }
+                  actual {
+                    value
+                  }
+                  displayName
+                  status
+                }
+                loadTime {
+                  goal {
+                    value
+                  }
+                  variance {
+                    value
+                  }
+                  actual {
+                    value
+                  }
+                  displayName
+                  status
+                }
+                singles {
+                  goal {
+                    percentage
+                  }
+                  variance {
+                    percentage
+                  }
+                  actual {
+                    percentage
+                  }
+                  displayName
+                  status
+                }
+                extremeDelivery {
+                  goal {
+                    value
+                  }
+                  variance {
+                    value
+                  }
+                  actual {
+                    value
+                  }
+                  displayName
+                  status
+                }
+                status
+                displayName
+                narrative
+              }
+              cash {
+                goal {
+                  value
+                }
+                variance {
+                  value
+                }
+                actual {
+                  value
+                }
+                displayName
+                status
+              }
+
+              oerStart {
+                goal {
+                  value
+                }
+                variance {
+                  value
+                }
+                actual {
+                  value
+                }
+                displayName
+                status
+              }
+
+              labor {
+                goal {
+                  percentage
+                  value
+                }
+                variance {
+                  percentage
+                  value
+                }
+                actual {
+                  percentage
+                  value
+                }
+                displayName
+                status
+              }
+            }
+          }
+      individualSupervisors(supervisorNumbers: $supervisorNumbers) {
+        supervisorName
+        supervisorNumber
+
+      }
+      stores(storeNumbers: $storeNumbers) {
+        today {
+          checkInHour
+          checkInPointList
+          isCheckInPoint
+          sales {
+            goal {
+              value
+            }
+            variance {
+              value
+            }
+            actual {
+              value
+            }
+            displayName
+            status
+          }
+          service {
+            eADT {
+              goal {
+                value
+              }
+              variance {
+                value
+              }
+              actual {
+                value
+              }
+              displayName
+              status
+            }
+            singles {
+              goal {
+                percentage
+              }
+              variance {
+                percentage
+              }
+              actual {
+                percentage
+              }
+              displayName
+              status
+            }
+            extremeDelivery {
+              goal {
+                value
+              }
+              variance {
+                value
+              }
+              actual {
+                value
+              }
+              displayName
+              status
+            }
+            status
+            displayName
+            narrative
+          }
+          cash {
+            goal {
+              value
+            }
+            variance {
+              value
+            }
+            actual {
+              value
+            }
+            displayName
+            status
+          }
+
+          oerStart {
+            goal {
+              value
+            }
+            variance {
+              value
+            }
+            actual {
+              value
+            }
+            displayName
+            status
+          }
+          labor {
+            goal {
+              percentage
+              value
+            }
+            variance {
+              percentage
+              value
+            }
+            actual {
+              percentage
+              value
+            }
+            displayName
+            status
+          }
+        }
+      }
+    }
+  }
+}
+
+

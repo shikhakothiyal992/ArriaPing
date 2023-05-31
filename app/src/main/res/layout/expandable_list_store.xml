@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/store_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/_7sdp"
+    android:paddingEnd="@dimen/_2sdp"
+    android:paddingStart="0dp"
+    android:paddingBottom="@dimen/_7sdp"
+    android:weightSum="4"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/store_name"
+        android:layout_width="0dp"
+        style="@style/alt_row_sub_display_text"
+        android:textStyle="normal"
+        android:textSize="@dimen/_10ssp"
+        android:paddingStart="@dimen/_4sdp"
+        android:paddingEnd="0dp"
+        android:gravity="start"
+        tools:text="1028"
+
+       />
+
+    <LinearLayout
+        android:id="@+id/store_goal_layout"
+        android:layout_weight="1.02"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/store_goal"
+            style="@style/alt_row_value_text"
+            android:gravity="end"
+            android:visibility="visible"
+            tools:text="gaol"/>
+        <TextView
+            android:id="@+id/store_goal_error"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat="@drawable/ic_error"
+            android:gravity="end"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/store_variance_layout"
+        android:layout_weight="1.02"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/store_variance"
+            style="@style/alt_row_value_text"
+            android:gravity="end"
+            android:visibility="visible"
+            tools:text="variance"/>
+        <TextView
+            android:id="@+id/store_variance_error"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat="@drawable/ic_error"
+            android:gravity="end"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/store_actual_layout"
+        android:layout_weight="1.02"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/store_actual"
+            style="@style/alt_row_value_text"
+            android:gravity="end"
+            android:visibility="visible"
+            android:drawablePadding="@dimen/_5sdp"
+            tools:text="actual"/>
+        <TextView
+            android:id="@+id/store_actual_error"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat="@drawable/ic_error"
+            android:gravity="end"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/store_error_ceo_period_range_kpi"
+        style="@style/data_unavailable_text_style"
+        android:layout_marginStart="25dp"
+        android:visibility="gone"
+        />
+
+</LinearLayout>

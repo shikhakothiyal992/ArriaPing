@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/_50sdp"
+    android:background="@android:color/white"
+    android:fillViewport="true"
+    tools:context=".ui.kpi.gm.view.GMYesterdayKpiFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/common_header_ceo"
+            layout="@layout/common_header_ceo" />
+
+        <TextView
+            android:id="@+id/hrs_remaining_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:fontFamily="@font/sf_compact_text_bold"
+            android:gravity="center_horizontal"
+            android:letterSpacing="-0.02"
+            android:lineSpacingExtra="4sp"
+            android:text="10 hrs to go in the day"
+            android:textAllCaps="true"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/_9sdp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/check_in_rcv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_15sdp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/check_in_rcv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <ImageView
+                android:id="@+id/awus_parent_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_weight="0"
+                android:foregroundGravity="center"
+                android:src="@drawable/ic_icon_chevron_down"
+                android:visibility="invisible" />
+
+            <TextView style="@style/alt_row_display_text" />
+
+            <TextView
+                style="@style/alt_row_display_text_goal_variance_actual"
+                android:gravity="end"
+                android:text="@string/goal_text" />
+
+            <TextView
+                style="@style/alt_row_display_text_goal_variance_actual"
+                android:gravity="end"
+                android:text="@string/variance_text" />
+
+            <TextView
+                style="@style/alt_row_display_text_goal_variance_actual"
+                android:drawableEnd="@drawable/empty_circle"
+                android:drawablePadding="@dimen/_5sdp"
+                android:gravity="end"
+                android:text="@string/actual_text" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:background="@color/opacity_40"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <!--AWS Supervisor Today-->
+
+            <LinearLayout
+                android:id="@+id/aws_parent_layout_supervisor_today"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/awus_parent_text_img_supervisor_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_weight="0"
+                    android:contentDescription=""
+                    android:foregroundGravity="center" />
+
+                <TextView
+                    android:id="@+id/awus_display_supervisor_today"
+                    style="@style/alt_row_display_text" />
+
+
+                <TextView
+                    android:id="@+id/sales_goal_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/sales_variance_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/sales_actual_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/aws_text_overview_supervisor_today"
+                style="@style/over_view_text"
+                android:text="@string/awus_text_overview" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_sales_supervisor_today"
+                style="@style/expandable_view" />
+
+            <!--Order Supervisor Today-->
+            <LinearLayout
+                android:id="@+id/order_count_parent_today"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="4">
+
+                <TextView
+                    style="@style/alt_row_display_text"
+                    android:text="@string/order_count_text" />
+
+                <TextView
+                    android:id="@+id/oc_goal"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/oc_variance"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/oc_actual"
+                    style="@style/alt_row_value_text"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <View
+                style="@style/dotted_horizontal_line"
+                android:background="@drawable/dotted_horizontal_line" />
+
+            <!--Labour Supervisor Today-->
+            <LinearLayout
+                android:id="@+id/labor_parent_layout_supervisor_today"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/labor_parent_text_img_supervisor_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_weight="0"
+                    android:contentDescription=""
+                    android:foregroundGravity="center" />
+
+                <TextView
+                    android:id="@+id/labour_display_supervisor_today"
+                    style="@style/alt_row_display_text" />
+
+                <TextView
+                    android:id="@+id/labour_goal_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/labour_variance_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/labour_actual_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/labour_text_overview_supervisor_today"
+                style="@style/over_view_text"
+                android:text="@string/labour_text_overview" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_labour_supervisor_today"
+                style="@style/expandable_view" />
+
+            <View
+                style="@style/dotted_horizontal_line"
+                android:background="@drawable/dotted_horizontal_line" />
+
+            <!--Service Supervisor Today-->
+            <LinearLayout
+                android:id="@+id/service_parent_layout_supervisor_today"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/service_parent_text_img_supervisor_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_weight="0"
+                    android:contentDescription=""
+                    android:foregroundGravity="center" />
+
+                <TextView
+                    android:id="@+id/service_display_supervisor_today"
+                    style="@style/alt_row_display_text" />
+
+                <TextView
+                    android:id="@+id/service_goalservice_goal_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/service_variance_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/service_actual_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/service_text_overview_supervisor_today"
+                style="@style/over_view_text"
+                android:text="@string/service_text_overview" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_service_supervisor_today"
+                style="@style/expandable_view" />
+
+            <!--EADT  Supervisor Today-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/eadt_display_supervisor_today"
+                    style="@style/alt_row_display_text"
+                    android:fontFamily="@font/sf_ui_text_medium"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/service_eadt_goal_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/service_eadt_variance_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/service_eadt_actual_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <!--Extreme Service Supervisor Today-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/extreme_delivery_display_supervisor_today"
+                    style="@style/alt_row_display_text"
+                    android:fontFamily="@font/sf_ui_text_medium"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/service_extreme_goal_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/service_extreme_variance_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/service_extreme_actual_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <!--Single Service Supervisor Today-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/single_display_supervisor_today"
+                    style="@style/alt_row_display_text"
+                    android:fontFamily="@font/sf_ui_text_medium"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/service_singles_goal_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/service_singles_variance_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/service_singles_actual_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <!--Load Supervisor Today-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/load_time_display_supervisor_today"
+                    style="@style/alt_row_display_text"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/load_time_goal_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/load_time_variance_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/load_time_actual_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <!--Wait Supervisor Today-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/wait_time_display_supervisor_today"
+                    style="@style/alt_row_display_text"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/wait_time_goal_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/wait_time_variance_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/wait_time_actual_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <!--OTD Supervisor Today-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/otd_display_supervisor_today"
+                    style="@style/alt_row_display_text"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/otd_goal_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/otd_variance_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/otd_actual_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <View
+                style="@style/dotted_horizontal_line"
+                android:background="@drawable/dotted_horizontal_line" />
+
+            <!--Cash Supervisor Today-->
+            <LinearLayout
+                android:id="@+id/cash_parent_layout_supervisor_today"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/cash_parent_img_supervisor_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_weight="0"
+                    android:contentDescription=""
+                    android:foregroundGravity="center" />
+
+                <TextView
+                    android:id="@+id/cash_display_supervisor_today"
+                    style="@style/alt_row_display_text" />
+
+                <TextView
+                    android:id="@+id/cash_goal_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/cash_variance_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/cash_actual_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/cash_text_overview_supervisor_today"
+                style="@style/over_view_text"
+                android:text="@string/cash_text_overview" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_cash_supervisor_today"
+                style="@style/expandable_view" />
+
+            <View
+                style="@style/dotted_horizontal_line"
+                android:background="@drawable/dotted_horizontal_line" />
+
+            <!--OER Supervisor Today-->
+            <LinearLayout
+                android:id="@+id/oer_parent_layout_supervisor_today"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/oer_parent_img_supervisor_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_weight="0"
+                    android:contentDescription=""
+                    android:foregroundGravity="center" />
+
+                <TextView
+                    android:id="@+id/oer_display_supervisor_today"
+                    style="@style/alt_row_display_text" />
+
+                <TextView
+                    android:id="@+id/oer_goal_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/oer_variance_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:gravity="end" />
+
+                <TextView
+                    android:id="@+id/oer_actual_supervisor_today"
+                    style="@style/alt_row_value_text"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/oer_text_overview_supervisor_today"
+                style="@style/over_view_text"
+                android:text="@string/oer_text_overview" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_oer_supervisor_today"
+                style="@style/expandable_view" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

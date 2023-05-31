@@ -1,0 +1,1233 @@
+query SupervisorOverviewYesterday ($storeNumbers:[String!]) {
+  supervisor {
+    kpis {
+      stores(storeNumbers: $storeNumbers) {
+        yesterday {
+          sales {
+            goal {
+              value
+              amount
+              percentage
+            }
+            variance {
+              value
+              amount
+              percentage
+            }
+            actual {
+              value
+              amount
+              percentage
+            }
+            displayName
+            narrative
+            status
+            pcya {
+              olo {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                status
+                displayName
+              }
+              phone {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                status
+                displayName
+              }
+              walkin {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                status
+                displayName
+              }
+              delivery {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              carryout {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              total {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+
+            orderCount {
+              olo {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              phone {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                status
+                displayName
+              }
+              walkin {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                status
+                displayName
+              }
+              delivery {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              carryout {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              total {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+            averageTicket {
+              olo {
+                actual {
+                  value
+                  percentage
+                  amount
+                }
+                displayName
+                status
+              }
+              phone {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              walkin {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              delivery {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              carryout {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              total {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+            oloSales {
+              pcya {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              orderCount {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              averageTicket {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              total {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+
+            phoneSales {
+              pcya {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              orderCount {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              averageTicket {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              total {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+
+            walkinSales {
+              pcya {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              orderCount {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              averageTicket {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              total {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+            deliverySales {
+              pcya {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              orderCount {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              averageTicket {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              total {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+            carryoutSales {
+              pcya {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              orderCount {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              averageTicket {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+              total {
+                actual {
+                  amount
+                  value
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+          }
+          food {
+            goal {
+              value
+              amount
+              percentage
+            }
+            variance {
+              value
+              amount
+              percentage
+            }
+            actual {
+              value
+              amount
+              percentage
+            }
+            displayName
+            narrative
+            status
+            idealvsActualFoodVariance {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            idealFood {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+
+            actualFood {
+              total {
+                goal {
+                  value
+                  amount
+                  percentage
+                }
+                variance {
+                  value
+                  amount
+                  percentage
+                }
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+
+              cheese {
+                goal {
+                  value
+                  amount
+                  percentage
+                }
+                variance {
+                  value
+                  amount
+                  percentage
+                }
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+
+              dough {
+                goal {
+                  value
+                  amount
+                  percentage
+                }
+                variance {
+                  value
+                  amount
+                  percentage
+                }
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+
+              twentyOZ {
+                goal {
+                  value
+                  amount
+                  percentage
+                }
+                variance {
+                  value
+                  amount
+                  percentage
+                }
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+
+              top5 {
+                goal {
+                  value
+                  amount
+                  percentage
+                }
+                variance {
+                  value
+                  amount
+                  percentage
+                }
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+
+              allItems {
+                goal {
+                  value
+                  amount
+                  percentage
+                }
+                variance {
+                  value
+                  amount
+                  percentage
+                }
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+
+            endingInventory {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+
+            foodBought {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+          }
+          labor {
+            displayName
+            status
+            narrative
+            goal {
+              value
+              amount
+              percentage
+            }
+            variance {
+              value
+              amount
+              percentage
+            }
+            actual {
+              value
+              amount
+              percentage
+            }
+            laborvsGoal {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            salesPerLaborHour {
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            laborHours {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            laborvsManagerBudget {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            breaks {
+              total {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              breakQuantity {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              laborWithBreaks {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              laborWithBreaks {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              laborWithoutBreaksAndOT {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              laborWithoutBreaksAndOT {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+            driverOTFull {
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            driverOTPremium {
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            staffing {
+              total {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              totalTMCount {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              insiders {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              drivers {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              tmCountLessThan30Hours {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              tmCountMoreThan30Hours {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+          }
+          service {
+            narrative
+            displayName
+            eADT {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+              legTime {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+            extremeDelivery {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+              deliveryOrderCount {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              extremeDeliveryCount {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+            singles {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              _doubles {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              triples {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              displayName
+              status
+            }
+            loadTime {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+              carryoutLoadTime {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+            waitTime {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            otd {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            aot {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+              hangUps {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+            outTheDoor {
+              goal {
+                value
+                amount
+                percentage
+              }
+              variance {
+                value
+                amount
+                percentage
+              }
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            csatMeterRating90dayAvg {
+              weeklyCCCClosureRate {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              cccPer1000Orders90DayAvg {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              total {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+          }
+          cash {
+            goal {
+              value
+              amount
+              percentage
+            }
+            variance {
+              value
+              amount
+              percentage
+            }
+            actual {
+              value
+              amount
+              percentage
+            }
+            displayName
+            status
+          }
+          oerStart {
+            goal {
+              value
+              amount
+              percentage
+            }
+            variance {
+              value
+              amount
+              percentage
+            }
+            actual {
+              value
+              amount
+              percentage
+            }
+            displayName
+            status
+            twentyEightDayeADT {
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            twentyEightExtremeDeliveries {
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            twentyEightSingles {
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            twentyEightLoad {
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            twentyEightLoad {
+              actual {
+                value
+                amount
+                percentage
+              }
+              displayName
+              status
+            }
+            lastOERScore {
+              total {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              lastFoodSafetyScore {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              lastImageScore {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              lastProductScore {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              lasteADTScore {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              lastExtremeDeliveriesScore {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              lastSinglesScore {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+              lastLoadScore {
+                actual {
+                  value
+                  amount
+                  percentage
+                }
+                displayName
+                status
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

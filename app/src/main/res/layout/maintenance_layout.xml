@@ -1,0 +1,48 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
+    
+    <TextView
+        android:id="@+id/maintenance_title"
+        android:layout_width="259dp"
+        android:layout_height="90dp"
+        android:text="Maintenance in progress"
+        android:fontFamily="@font/sf_ui_text_regular"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginEnd="58dp"
+        />
+
+    <TextView
+        android:id="@+id/maintenance_description"
+        android:layout_width="275dp"
+        android:layout_height="80dp"
+        android:text="We are currently performing planned maintenance, your data will be available after 9pm. We apologise for \n any inconvenience."
+        android:fontFamily="@font/sf_ui_text_regular"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/maintenance_title"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+       />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

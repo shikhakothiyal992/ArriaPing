@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:id="@+id/header_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_profile"
+            android:scaleX=".7"
+            android:scaleY=".7"
+            android:layout_marginTop="@dimen/_50sdp"/>
+
+        <TextView
+            android:id="@+id/text_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_ui_text_heavy"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:id="@+id/text_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_ui_text_regular"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_12ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@color/opacity_40"
+            android:alpha="0.2"
+            android:gravity="center"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/touch_id_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_parent"
+        android:visibility="visible"
+        >
+
+        <TextView
+            android:id="@+id/touch_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_ui_text_bold"
+            android:layout_gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="Touch ID"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Switch
+            android:id="@+id/touch_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/switch_view"
+            app:layout_constraintTop_toTopOf="@id/touch_text"
+            app:layout_constraintBottom_toBottomOf="@id/touch_text"
+            android:gravity="end"
+            android:checked="false"
+            android:thumb="@drawable/bg_thumb"
+            android:track="@drawable/bg_switch_states"/>
+
+        <View
+            android:id="@+id/switch_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@color/opacity_40"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/touch_text"
+            android:alpha="0.2"
+             />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/text_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/touch_id_layout"
+        android:fontFamily="@font/sf_ui_text_bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/logout"
+        android:textAlignment="textStart"
+        android:textColor="@color/header_color"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@+id/text_logout"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@color/opacity_40"
+        android:alpha="0.2"
+        android:gravity="center"
+        android:orientation="vertical" />
+
+
+    <TextView
+        android:id="@+id/app_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:fontFamily="@font/sf_ui_text_regular"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:textColor="#000000"
+        android:textSize="@dimen/_9ssp" />
+</RelativeLayout>

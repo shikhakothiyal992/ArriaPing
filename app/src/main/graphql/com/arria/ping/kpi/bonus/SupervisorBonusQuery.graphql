@@ -1,0 +1,249 @@
+query SupervisorBonusQuery(
+    $areaCodes: [String!]
+    $stateCodes: [String!]
+    $storeNumbers: [String!]
+    $periodRangeFrom: String!
+    $periodRangeTo: String!
+) {
+    supervisor(areaCodes: $areaCodes, stateCodes: $stateCodes) {
+        bonus {
+            stores(storeNumbers: $storeNumbers) {
+                period(rangeFrom: $periodRangeFrom, rangeTo: $periodRangeTo) {
+                periodFrom
+                periodTo
+                    narrative
+                    awus {
+                        goal {
+                            value
+                            percentage
+                            amount
+                        }
+                        variance {
+                            value
+                            percentage
+                            amount
+                        }
+                        actual {
+                            value
+                            percentage
+                            amount
+                        }
+                        displayName
+                        status
+                    }
+                    potential {
+                        goal {
+                            value
+                            percentage
+                            amount
+                        }
+                        variance {
+                            value
+                            percentage
+                            amount
+                        }
+                        actual {
+                            value
+                            percentage
+                            amount
+                        }
+                        displayName
+                        status
+                    }
+                    food {
+                        goal {
+                            value
+                            percentage
+                            amount
+                        }
+                        variance {
+                            value
+                            percentage
+                            amount
+                        }
+                        actual {
+                            value
+                            percentage
+                            amount
+                        }
+                        status
+                        displayName
+                        idealvsActualFoodVariance {
+                            goal {
+                                value
+                                percentage
+                                amount
+                            }
+                            variance {
+                                value
+                                percentage
+                                amount
+                            }
+                            actual {
+                                value
+                                percentage
+                                amount
+                            }
+                            status
+                            displayName
+                        }
+                    }
+                    labor {
+                        goal {
+                            value
+                            percentage
+                            amount
+                        }
+                        variance {
+                            value
+                            percentage
+                            amount
+                        }
+                        actual {
+                            value
+                            percentage
+                            amount
+                        }
+                        status
+                        displayName
+                        laborvsGoal {
+                            goal {
+                                value
+                                percentage
+                                amount
+                            }
+                            variance {
+                                value
+                                percentage
+                                amount
+                            }
+                            actual {
+                                value
+                                percentage
+                                amount
+                            }
+                            status
+                            displayName
+                        }
+                    }
+                    service {
+                        goal {
+                            value
+                            percentage
+                            amount
+                        }
+                        variance {
+                            value
+                            percentage
+                            amount
+                        }
+                        actual {
+                            value
+                            percentage
+                            amount
+                        }
+                        status
+                        displayName
+                        eADT {
+                            goal {
+                                value
+                                percentage
+                                amount
+                            }
+                            variance {
+                                value
+                                percentage
+                                amount
+                            }
+                            actual {
+                                value
+                                percentage
+                                amount
+                            }
+                            status
+                            displayName
+                        }
+                        extremeDelivery {
+                            goal {
+                                value
+                                percentage
+                                amount
+                            }
+                            variance {
+                                value
+                                percentage
+                                amount
+                            }
+                            actual {
+                                value
+                                percentage
+                                amount
+                            }
+                            status
+                            displayName
+                        }
+                        singles {
+                            goal {
+                                value
+                                percentage
+                                amount
+                            }
+                            variance {
+                                value
+                                percentage
+                                amount
+                            }
+                            actual {
+                                value
+                                percentage
+                                amount
+                            }
+                            status
+                            displayName
+                        }
+                    }
+                    focus {
+                        goal {
+                            value
+                            percentage
+                            amount
+                        }
+                        variance {
+                            value
+                            percentage
+                            amount
+                        }
+                        actual {
+                            value
+                            percentage
+                            amount
+                        }
+                        status
+                        displayName
+                    }
+                    bonus {
+                        potential {
+                            value
+                            percentage
+                            amount
+                        }
+                        missed {
+                            value
+                            percentage
+                            amount
+                        }
+                        earner {
+                            value
+                            percentage
+                            amount
+                        }
+                        status
+                        displayName
+                        status
+                    }
+                    narrative
+                }
+            }
+        }
+    }
+}

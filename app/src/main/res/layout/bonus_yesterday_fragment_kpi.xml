@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="@dimen/_50sdp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.kpi.gm.view.GMYesterdayKpiFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/bonus_swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/common_header_bonus"
+                layout="@layout/common_header_bonus" />
+            <include
+                android:id="@+id/bonus_error_layout"
+                layout="@layout/error_layout"
+                android:visibility="gone"
+                />
+            <include
+                android:id="@+id/bonus_gm_error_layout"
+                layout="@layout/data_error_layout"
+                android:visibility="gone"
+                tools:visibility="visible"
+                />
+
+
+
+            <include
+                android:id="@+id/common_calendar_bonus"
+                layout="@layout/common_calendar" />
+
+            <TextView
+                android:id="@+id/days_remaining_text"
+                style="@style/text_header"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8sdp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/bonus_goal_parent_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView style="@style/alt_row_display_text" />
+
+                <TextView
+                    style="@style/alt_row_display_text_goal_variance_actual"
+                    android:gravity="end"
+                    android:text="@string/goal_text" />
+
+                <TextView
+                    style="@style/alt_row_display_text_goal_variance_actual"
+                    android:gravity="end"
+                    android:text="@string/variance_text" />
+
+                <TextView
+                    style="@style/alt_row_display_text_goal_variance_actual"
+                    app:drawableEndCompat="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="end"
+                    android:text="@string/actual_text" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/bonus_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_27sdp"
+                android:background="@color/opacity_40"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:id="@+id/bonus_data_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <!--AWS-->
+                <LinearLayout
+                    android:id="@+id/awus_parent_layout_bonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/awus_display_bonus"
+                        style="@style/alt_row_display_text"
+                        tools:text="AWUS"
+                        android:layout_width="0dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/awus_goal_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/awus_variance_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/awus_actual_bonus"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"
+                        />
+                    <TextView
+                        android:id="@+id/gm_bonus_awus_error"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <!--Potential-->
+                <LinearLayout
+                    android:id="@+id/potential_parent_layout_bonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/potential_display_bonus"
+                        style="@style/alt_row_display_text"
+                        tools:text="Potential"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/potential_goal_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/potential_variance_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/potential_actual_bonus"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/gm_bonus_pot_error"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+                </LinearLayout>
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <!--Food-->
+                <LinearLayout
+                    android:id="@+id/food_parent_layout_bonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/food_display_bonus"
+                        style="@style/alt_row_display_text"
+                        android:layout_width="0dp"
+                        tools:text="Food"/>
+
+                    <TextView
+                        android:id="@+id/food_goal_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/food_variance_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/food_actual_bonus"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+                    <TextView
+                        android:id="@+id/gm_bonus_food_error"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <!--Labour-->
+                <LinearLayout
+                    android:id="@+id/labor_parent_layout_bonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/labour_display_bonus"
+                        style="@style/alt_row_display_text"
+                        android:layout_width="0dp"
+                        tools:text="Labour"/>
+
+                    <TextView
+                        android:id="@+id/labour_goal_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/labour_variance_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/labour_actual_bonus"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+                    <TextView
+                        android:id="@+id/gm_bonus_labour_error"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+                </LinearLayout>
+
+                <!--Service-->
+                <LinearLayout
+                    android:id="@+id/service_parent_layout_bonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/service_display_bonus"
+                        style="@style/alt_row_display_text"
+                        android:text="Service"
+                        android:layout_width="0dp"
+                        tools:text="Service"/>
+
+                    <TextView
+                        android:id="@+id/service_goal_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/service_variance_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/service_actual_bonus"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+                    <TextView
+                        android:id="@+id/gm_bonus_service_error"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <!--Service EADT-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/eadt_display_bonus"
+                        style="@style/alt_row_sub_display_text"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        android:layout_width="0dp"
+                        tools:text="eADT"/>
+
+                    <TextView
+                        android:id="@+id/service_eadt_goal_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/service_eadt_variance_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/service_eadt_actual_bonus"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+                    <TextView
+                        android:id="@+id/gm_bonus_service_eatd_error"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <!--Service Extreme-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/extreme_delivery_display_bonus"
+                        style="@style/alt_row_sub_display_text"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        android:layout_width="0dp"
+                        tools:text="Extreme"/>
+
+                    <TextView
+                        android:id="@+id/service_extreme_goal_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/service_extreme_variance_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/service_extreme_actual_bonus"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+                    <TextView
+                        android:id="@+id/gm_bonus_service_extreme_error"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+                </LinearLayout>
+
+                <!--Service Single-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/single_display_bonus"
+                        style="@style/alt_row_sub_display_text"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        android:layout_width="0dp"
+                        tools:text="Single"/>
+
+                    <TextView
+                        android:id="@+id/service_singles_goal_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/service_singles_variance_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/service_singles_actual_bonus"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+                    <TextView
+                        android:id="@+id/gm_bonus_service_single_error"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+                </LinearLayout>
+
+                <!--Focus-->
+                <LinearLayout
+                    android:id="@+id/focus_parent_layout_bonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/focus_display_bonus"
+                        style="@style/alt_row_display_text"
+                        android:layout_width="0dp"
+                        tools:text="Focus"/>
+
+                    <TextView
+                        android:id="@+id/focus_goal_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/focus_variance_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/focus_actual_bonus"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/gm_bonus_focus_error"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/potential_display1"
+                        style="@style/alt_row_display_text_goal_variance_actual"
+                        android:gravity="end"
+                        android:text="@string/potential_text"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:id="@+id/missed_display1"
+                        style="@style/alt_row_display_text_goal_variance_actual"
+                        android:gravity="end"
+                        android:text="@string/missed_text"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:id="@+id/earner_display1"
+                        style="@style/alt_row_display_text_goal_variance_actual"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        android:text="@string/earner_text"
+                        android:textAllCaps="true" />
+                </LinearLayout>
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <!--Bonus-->
+                <LinearLayout
+                    android:id="@+id/bonus_parent_layout_bonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/bonus_display_bonus"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/bonus_potential_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/bonus_missed_bonus"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/bonus_earner_bonus"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:background="@drawable/dotted_horizontal_line"
+                    android:visibility="gone" />
+
+                <!--Cash-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/cash_display"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/cash_goal"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/cash_variance"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/cash"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <!--OER-->
+                <LinearLayout
+                    android:id="@+id/oer_parent_layout_bonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/oer_display"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/oer_goal"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/oer_variance"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/oer_actual"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <!--Bonus Potential-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/bonus_potential_display"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/bonus_potential_goal"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/bonus_potential_variance"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/bonus_potential_actual"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <!--Bonus Missed-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/bonus_missed_display"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/bonus_missed_goal"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/bonus_missed_variance"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/bonus_missed_actual"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <!--Bonus Earner-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/bonus_earner_display"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/bonus_earner_goal"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/bonus_earner_variance"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/bonus_earner_actual"
+                        style="@style/alt_row_value_text"
+                        app:drawableEndCompat="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:src="@drawable/ic_bonus" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="center"
+                    android:text="@string/bonus_summary"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_regularitalic"
+                    android:gravity="center"
+                    android:text="@string/updated_bonus_text"
+                    android:textColor="@color/neutral"
+                    android:textSize="@dimen/_10ssp" />
+
+                <LinearLayout
+                    android:id="@+id/narrative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_40sdp"
+                    android:background="@color/bonus_narrative_background"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/bonus_narrative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:gravity="start"
+                        android:padding="@dimen/_5sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

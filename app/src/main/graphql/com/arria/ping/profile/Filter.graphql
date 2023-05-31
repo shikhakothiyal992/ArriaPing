@@ -1,0 +1,13 @@
+query Filter($areaCode:[String!],$stateCodes:[String!],$supervisorNumbers:[String!],$storeNumbers:[String!]){
+  user {
+
+    email
+
+    firstName
+
+    lastName
+
+    role
+  }
+
+}

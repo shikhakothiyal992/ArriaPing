@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.arria.ping">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+
+    <application
+            android:name="com.arria.ping.app.PingAnalyst"
+            android:allowBackup="false"
+            android:fullBackupContent="false"
+            tools:replace="android:allowBackup"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+
+        <uses-library
+                android:name="org.apache.http.legacy"
+                android:required="false" />
+
+        <activity
+                android:name=".ui.actions.BaseActionsActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.actions.DetailPastActionActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.actions.ceo.CEOPastActionListActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.actions.ceo.CEOPastActionStoreListActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.actions.do_.DOPastActionListActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.actions.do_.DOPastActionStoreListActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.actions.supervisor.SupervisorPastActionListActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.actions.supervisor.SupervisorPastActionStoreListActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.actions.alerts.GMPastAlertsListActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.actions.checkins.GMPastCheckInsListActivity"
+                android:screenOrientation="portrait" />
+
+        <activity
+                android:name=".ui.filter.StoreFilterActivity"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity
+                android:name=".ui.filter.FilterActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.kpi.overview.FoodKpiActivity"
+                android:excludeFromRecents="true"
+                android:launchMode="singleTop"
+                android:theme="@style/NoActionBar" />
+        <activity
+                android:name=".ui.kpi.overview.OERStartActivity"
+                android:excludeFromRecents="true"
+                android:launchMode="singleTop"
+                android:theme="@style/NoActionBar" />
+        <activity
+                android:name=".ui.kpi.overview.ServiceKpiActivity"
+                android:excludeFromRecents="true"
+                android:launchMode="singleTop"
+                android:theme="@style/NoActionBar" />
+        <activity
+                android:name=".ui.kpi.overview.LabourKpiActivity"
+                android:excludeFromRecents="true"
+                android:launchMode="singleTop"
+                android:theme="@style/NoActionBar" />
+        <activity
+                android:name=".ui.kpi.overview.AWUSKpiActivity"
+                android:excludeFromRecents="true"
+                android:launchMode="singleTop"
+                android:theme="@style/NoActionBar" />
+        <activity
+                android:name=".ui.kpi.overview.CashKpiActivity"
+                android:excludeFromRecents="true"
+                android:launchMode="singleTop"
+                android:theme="@style/NoActionBar" />
+        <activity
+                android:name="com.arria.ping.ui.generalview.ConfirmationCodeActivity"
+                android:launchMode="singleTop"
+                android:windowSoftInputMode="stateVisible"
+                android:screenOrientation="portrait" />
+
+        <activity
+                android:name=".ui.generalview.NewChangePasswordAfterOtpVerifyActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity
+                android:name=".ui.generalview.NewPasswordActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity
+                android:name=".ui.generalview.ForgotPasswordActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.generalview.SetupNewPasswordActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.generalview.LoginActivity"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden" />
+        <activity
+                android:name=".ui.generalview.MainActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.actions.GMPastActionListActivity"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.filter.PeriodFilterActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".ui.filter.CustomRangeCalendarFilterActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait" />
+
+        <activity
+                android:name=".ui.generalview.WelcomeActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait" />
+
+        <activity
+                android:name=".ui.generalview.SplashActivity"
+                android:label="@string/app_name"
+                >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".fcm.FirebaseMessagingService"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+                android:name="com.google.firebase.messaging.default_notification_icon"
+                android:resource="@mipmap/logo" />
+        <meta-data
+                android:name="com.google.firebase.messaging.default_notification_color"
+                android:resource="@color/black" />
+        <meta-data
+                android:name="com.google.firebase.messaging.default_notification_channel_id"
+                android:value="@string/default_notification_channel_id" />
+    </application>
+
+</manifest>

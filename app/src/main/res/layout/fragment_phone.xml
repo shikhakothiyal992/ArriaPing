@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/_50sdp"
+    android:background="@color/white"
+    tools:context=".ui.kpi.gm.view.GMYesterdayKpiFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/_30ssp">
+
+            <include
+                android:id="@+id/common_header"
+                layout="@layout/common_header_phone" />
+            <LinearLayout
+                android:id="@+id/goal_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:gravity="center"
+                android:weightSum="4"
+                android:orientation="horizontal">
+
+                <TextView style="@style/alt_row_display_text"
+                    />
+
+                <TextView
+                    style="@style/alt_row_display_text_goal_variance_actual"
+                    android:gravity="end"
+                    android:text="@string/goal_text"/>
+
+                <TextView
+                    style="@style/alt_row_display_text_goal_variance_actual"
+                    android:gravity="end"
+                    android:text="@string/variance_text"/>
+
+                <TextView
+                    style="@style/alt_row_display_text_goal_variance_actual"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="end"
+                    android:text="@string/actual_text" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:background="@color/opacity_40"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="vertical">
+                
+                <LinearLayout
+                    android:id="@+id/total__calls_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/total_calls_display"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/total_calls_goal"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/total_calls_variance"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/total_calls_actual"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/empty_circle"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/order_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/total_order_display"
+                        style="@style/alt_row_sub_display_text"
+                         />
+
+                    <TextView
+                        android:id="@+id/total_order_goal"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/total_order_varince"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/total_order_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/percentage_order_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/percentage_order_display"
+                        style="@style/alt_row_sub_display_text"/>
+
+                    <TextView
+                        android:id="@+id/percentage_order_goal"
+                        style="@style/alt_row_value_text"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/percentage_order_varince"
+                        style="@style/alt_row_value_text"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/percentage_order_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/average_cost_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/average_cost_display"
+                        style="@style/alt_row_sub_display_text" />
+
+                    <TextView
+                        android:id="@+id/average_cost_goal"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/average_cost_varince"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/average_cost_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                //Potential AWUS growth calls gone for now
+                <LinearLayout
+                    android:id="@+id/potential_awus_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/potential_awus_display"
+                        style="@style/alt_row_display_text"
+                        android:text="@string/potential_awus_growth" />
+
+                    <TextView
+                        android:id="@+id/potential_awus_goal"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/potential_awus_variance"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/potential_awus_actual"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/existing_customer_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/existing_customer_display"
+                        style="@style/alt_row_sub_display_text"
+                        android:text="@string/existing_customer" />
+
+                    <TextView
+                        android:id="@+id/existing_customer_goal"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/existing_customer_varince"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/existing_customer_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/new_customer_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/new_customer_display"
+                        style="@style/alt_row_sub_display_text"
+                        android:text="@string/new_customer" />
+
+                    <TextView
+                        android:id="@+id/new_customer_goal"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/new_customer_varince"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/new_customer_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                    <View
+                        style="@style/dotted_horizontal_line"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:background="@drawable/dotted_horizontal_line"/>
+                    // total hung ups
+
+                <LinearLayout
+                    android:id="@+id/total_hungs_up_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/total_hungs_up_display"
+                        style="@style/alt_row_display_text"
+                        android:text="@string/total_hang_ups" />
+
+                    <TextView
+                        android:id="@+id/total_hungs_up_goal"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/total_hungs_up_variance"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/total_hungs_up_actual"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/before_queue_display"
+                        style="@style/alt_row_sub_display_text"
+                        android:text="@string/before_queue" />
+
+                    <TextView
+                        android:id="@+id/before_queue_goal"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/before_queue_varince"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/before_queuer_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/in_queue_display"
+                        style="@style/alt_row_sub_display_text"
+                        android:text="@string/in_queue" />
+
+                    <TextView
+                        android:id="@+id/in_queue_goal"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/in_queue_varince"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/in_queue_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/customer_in_queue_display"
+                        style="@style/alt_row_sub_display_text"
+                        android:text="@string/customer_in_queue" />
+
+                    <TextView
+                        android:id="@+id/customer_in_queue_goal"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/customer_in_queue_varince"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/customer_in_queue_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/unknown_in_queue_display"
+                        style="@style/alt_row_sub_display_text"
+                        android:text="@string/unknwon_queue" />
+
+                    <TextView
+                        android:id="@+id/unknown_in_queue_goal"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/unknown_in_queue_varince"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/unknown_in_queue_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                // from hangus awus growth
+
+                <LinearLayout
+                    android:id="@+id/hangs_ups_potential_awus_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/hangs_ups_potential_awus_display"
+                        style="@style/alt_row_display_text"
+                        android:text="@string/potential_awus_growth" />
+
+                    <TextView
+                        android:id="@+id/hangs_ups_potential_awus_goal"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/hangs_ups_potential_awus_variance"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/hangs_ups_potential_awus_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:gravity="end" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/hangs_ups_existing_customer_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/hangs_ups_existing_customer_display"
+                        style="@style/alt_row_sub_display_text"
+                        android:text="@string/existing_customer" />
+
+                    <TextView
+                        android:id="@+id/hangs_ups_existing_customer_goal"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/hangs_ups_existing_customer_varince"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/hangs_ups_existing_customer_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hangs_ups_new_customer_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/hangs_ups_new_customer_display"
+                        style="@style/alt_row_sub_display_text"
+                        android:text="@string/unknown_caller" />
+
+                    <TextView
+                        android:id="@+id/hangs_ups_new_customer_goal"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/hangs_ups_new_customer_varince"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/hangs_ups_new_customer_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/potential_bonus_growth_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:weightSum="4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/potential_bonus_growth_display"
+                        style="@style/alt_row_display_text"
+                        android:text="@string/potential_bonus_growth" />
+
+                    <TextView
+                        android:id="@+id/potential_bonus_growth_goal"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/potential_bonus_growth_variance"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/potential_bonus_growth_actual"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                    <View
+                        style="@style/dotted_horizontal_line"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:background="@drawable/dotted_horizontal_line"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_40sdp"
+                            android:src="@drawable/ic_phone_handle" />
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_38sdp"
+                            android:src="@drawable/ic_phone_speaker" />
+                    </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/sf_ui_text_bold"
+                    android:gravity="center"
+                    android:text="@string/aot_summary"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/sf_ui_text_regularitalic"
+                    android:gravity="center"
+                    android:text="@string/updated_bonus_text"
+                    android:textColor="@color/neutral"
+                    android:textSize="@dimen/_10ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@color/bonus_narrative_background"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/phone_narrative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:gravity="start"
+                        android:padding="@dimen/_5sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/alert_button"
+        style="@style/alert_button"
+        android:background="@drawable/alert_border"
+        android:text="New action, check-in and 2 alerts" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

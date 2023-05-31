@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/_50sdp"
+    android:background="@android:color/white"
+    tools:context=".ui.kpi.gm.view.GMYesterdayKpiFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/ceo_yesterday_swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/_30ssp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/common_header_ceo"
+                layout="@layout/common_header_ceo" />
+
+            <include
+                android:id="@+id/ceo_yesterday_data_error_layout"
+                layout="@layout/error_layout"
+                android:visibility="gone"
+                />
+
+            <include
+                android:id="@+id/ceo_yesterday_no_internet_error_layout"
+                layout="@layout/no_internet_error_layout"
+                android:visibility="gone"
+                />
+
+            <include
+                android:id="@+id/ceo_yesterday_missing_data_error_layout"
+                layout="@layout/data_error_layout"
+                android:visibility="gone"
+                tools:visibility="visible"
+                />
+
+
+            <include
+                android:id="@+id/common_calendar"
+                layout="@layout/common_calendar" />
+
+            <TextView
+                android:id="@+id/hrs_remaining_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:fontFamily="@font/sf_compact_text_bold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="4sp"
+                android:text="10 hrs to go in the day"
+                android:textAllCaps="true"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_9sdp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/check_in_rcv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/check_in_rcv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ceo_yesterday_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_weight="0"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_icon_chevron_down"
+                    android:visibility="invisible" />
+
+                <TextView style="@style/alt_row_display_text"
+                        android:layout_weight="1.05"/>
+
+                <TextView
+                    style="@style/alt_row_display_text_goal_variance_actual"
+                    android:gravity="end"
+                    android:text="@string/goal_text" />
+
+                <TextView
+                    style="@style/alt_row_display_text_goal_variance_actual"
+                    android:gravity="end"
+                        android:layout_weight="0.98"
+                    android:text="@string/variance_text" />
+
+                <TextView
+                    style="@style/alt_row_display_text_goal_variance_actual"
+                        android:layout_weight="1.04"
+                    android:gravity="end"
+                    android:text="@string/actual_text" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/ceo_yesterday_v1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:background="@color/opacity_40"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:id="@+id/ceo_yesterday_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <!--AWS-->
+                <LinearLayout
+                    android:id="@+id/aws_parent_layout_yesterday_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <ImageView
+                        android:id="@+id/aws_parent_img_yesterday_kpi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="0"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_icon_chevron_down" />
+
+                    <TextView
+                        android:id="@+id/aws_display_yesterday_kpi"
+                        style="@style/alt_row_display_text"
+                        tools:text="AWUS"
+                        android:layout_width="0dp"/>
+
+
+                    <TextView
+                        android:id="@+id/sales_goal_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/sales_variance_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/sales_actual_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/sales_error_ceo_yesterday_kpi"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/aws_text_overview_yesterday_kpi"
+                    style="@style/over_view_text"
+                    android:text="@string/awus_text_overview" />
+
+                <com.arria.ping.util.NonScrollExpandableListView
+                    android:id="@+id/rcv_sales_yesterday_kpi"
+                    style="@style/expandable_view" />
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <!--Food-->
+                <LinearLayout
+                    android:id="@+id/food_parent_layout_yesterday_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <ImageView
+                        android:id="@+id/food_parent_img_yesterday_kpi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="0"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_icon_chevron_down" />
+
+                    <TextView
+                        android:id="@+id/food_display_yesterday_kpi"
+                        style="@style/alt_row_display_text"
+                        tools:text="Food"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/food_goal_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/food_variance_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+
+                    <TextView
+                        android:id="@+id/food_actual_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        tools:text="500"/>
+                    <TextView
+                        android:id="@+id/food_error_ceo_yesterday_kpi"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/ideal_vs_food_variance_text_overview_yesterday_kpi"
+                    style="@style/over_view_text"
+                    android:text="@string/ideal_vs_food_variance_text_overview" />
+
+                <com.arria.ping.util.NonScrollExpandableListView
+                    android:id="@+id/rcv_food_yesterday_kpi"
+                    style="@style/expandable_view" />
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <!--Labour-->
+                <LinearLayout
+                    android:id="@+id/labor_parent_layout_yesterday_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <ImageView
+                        android:id="@+id/labor_parent_img_yesterday_kpi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="0"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_icon_chevron_down" />
+
+                    <TextView
+                        android:id="@+id/labour_display_yesterday_kpi"
+                        style="@style/alt_row_display_text"
+                        tools:text="Labour"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/labour_goal_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/labour_variance_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/labour_actual_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+                    <TextView
+                        android:id="@+id/labour_error_ceo_yesterday_kpi"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/labour_text_overview_yesterday_kpi"
+                    style="@style/over_view_text"
+                    android:text="@string/labour_text_overview" />
+
+                <com.arria.ping.util.NonScrollExpandableListView
+                    android:id="@+id/rcv_labour_yesterday_kpi"
+                    style="@style/expandable_view" />
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <!--Service-->
+                <LinearLayout
+                    android:id="@+id/service_parent_layout_yesterday_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <ImageView
+                        android:id="@+id/service_parent_img_yesterday_kpi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="0"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_icon_chevron_down" />
+
+                    <TextView
+                        android:id="@+id/service_display_yesterday_kpi"
+                        style="@style/alt_row_display_text"
+                        tools:text="Service"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/service_goal_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/service_variance_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/service_actual_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/service_text_overview_yesterday_kpi"
+                    style="@style/over_view_text"
+                    android:text="@string/service_text_overview" />
+
+                <com.arria.ping.util.NonScrollExpandableListView
+                    android:id="@+id/rcv_service_yesterday_kpi"
+                    style="@style/expandable_view" />
+
+                <!--Service EADT-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <ImageView
+                        android:id="@+id/service_eADT_parent_img_yesterday_kpi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="0"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_icon_chevron_down"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/eadt_display_yesterday_kpi"
+                        style="@style/alt_row_display_text"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:textStyle="normal"
+                        tools:text="eADT"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/service_eadt_goal_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/service_eadt_variance_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/service_eadt_actual_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+                    <TextView
+                        android:id="@+id/service_error_ceo_yesterday_kpi"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <!--Service Extreme-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <ImageView
+                        android:id="@+id/service_extreme_parent_img_yesterday_kpi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="0"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_icon_chevron_down"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/extreme_delivery_display_yesterday_kpi"
+                        style="@style/alt_row_display_text"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:textStyle="normal"
+                        tools:text="Extreme Service"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/service_extreme_goal_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500e"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/service_extreme_variance_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500e"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/service_extreme_actual_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        tools:text="500e"
+                        android:layout_width="0dp"/>
+                    <TextView
+                        android:id="@+id/serviceExtreme_error_ceo_yesterday_kpi"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <!--Service Single-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <ImageView
+                        android:id="@+id/service_single_parent_img_yesterday_kpi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="0"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_icon_chevron_down"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/single_display_yesterday_kpi"
+                        style="@style/alt_row_display_text"
+                        android:fontFamily="@font/sf_ui_text_medium"
+                        android:textStyle="normal"
+                        tools:text="Single Service"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/service_singles_goal_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/service_singles_variance_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/service_singles_actual_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+                    <TextView
+                        android:id="@+id/serviceSingles_error_ceo_yesterday_kpi"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <!--Load-->
+                <LinearLayout
+                    android:id="@+id/load_parent_layout_yesterday_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/load_time_display_yesterday_kpi"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/load_time_goal_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/load_time_variance_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/load_time_actual_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <!--Wait-->
+                <LinearLayout
+                    android:id="@+id/wait_parent_layout_yesterday_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/wait_time_display_yesterday_kpi"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/wait_time_goal_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/wait_time_variance_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/wait_time_actual_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <!--OTD-->
+                <LinearLayout
+                    android:id="@+id/otd_parent_layout_yesterday_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/otd_display_yesterday_kpi"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/otd_goal_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/otd_variance_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/otd_actual_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <!--CASH-->
+                <LinearLayout
+                    android:id="@+id/cash_parent_layout_yesterday_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <ImageView
+                        android:id="@+id/cash_parent_img_yesterday_kpi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="0"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_icon_chevron_down" />
+
+                    <TextView
+                        android:id="@+id/cash_display_yesterday_kpi"
+                        style="@style/alt_row_display_text"
+                        tools:text="Cash"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/cash_goal_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/cash_variance_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/cash_actual_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+                    <TextView
+                        android:id="@+id/cash_error_ceo_yesterday_kpi"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/cash_text_overview_yesterday_kpi"
+                    style="@style/over_view_text"
+                    android:text="@string/cash_text_overview" />
+
+                <com.arria.ping.util.NonScrollExpandableListView
+                    android:id="@+id/rcv_cash_yesterday_kpi"
+                    style="@style/expandable_view" />
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <!--OER-->
+
+                <LinearLayout
+                    android:id="@+id/oer_parent_layout_yesterday_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <ImageView
+                        android:id="@+id/oer_parent_img_yesterday_kpi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="0"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/ic_icon_chevron_down" />
+
+                    <TextView
+                        android:id="@+id/oer_display_yesterday_kpi"
+                        style="@style/alt_row_display_text"
+                        tools:text="OER"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/oer_goal_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/oer_variance_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+
+                    <TextView
+                        android:id="@+id/oer_actual_yesterday_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end"
+                        tools:text="500"
+                        android:layout_width="0dp"/>
+                    <TextView
+                        android:id="@+id/oer_error_ceo_yesterday_kpi"
+                        android:visibility="gone"
+                        style="@style/data_unavailable_text_style"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/oer_text_overview_yesterday_kpi"
+                    style="@style/over_view_text"
+                    android:text="@string/oer_text_overview" />
+
+                <com.arria.ping.util.NonScrollExpandableListView
+                    android:id="@+id/rcv_oer_yesterday_kpi"
+                    style="@style/expandable_view" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

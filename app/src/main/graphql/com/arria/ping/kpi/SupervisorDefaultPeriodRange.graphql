@@ -1,0 +1,1035 @@
+# Write your query or mutation here
+query SupervisorDefaultPeriodRange (
+  $areaCodes:[String!],
+  $stateCodes:[String!],
+  $supervisorNumbers:[String!],
+  $storeNumbers:[String!],
+  $rangeFrom :String!,
+  $rangeTo: String!,
+  $filterType:filterType!
+) {
+  supervisor (areaCodes:$areaCodes, stateCodes:$stateCodes) {
+    kpis {
+      individualStores (storeNumbers: $storeNumbers,supervisorNumbers: $supervisorNumbers) {
+
+            storeName
+            storeNumber
+            storeEndTime
+            storeStartTime
+            bussinessDate
+            bussinessLastDay
+            bussinessStartDay
+            period(
+              rangeTo: $rangeTo
+              rangeFrom: $rangeFrom
+              filterType :$filterType
+            )
+            {
+              sales {
+                goal {
+                  amount
+                  percentage
+                  value
+                }
+                variance {
+                  amount
+                  percentage
+                  value
+                }
+                actual {
+                  amount
+                  percentage
+                  value
+                }
+                displayName
+                status
+              }
+              food {
+                goal {
+                  amount
+                  percentage
+                  value
+                }
+                actual {
+                  amount
+                  percentage
+                  value
+                }
+                variance {
+                  amount
+                  percentage
+                  value
+                }
+                status
+                displayName
+              }
+              service {
+                goal {
+                  amount
+                  percentage
+                  value
+                }
+                actual {
+                  amount
+                  percentage
+                  value
+                }
+                variance {
+                  amount
+                  percentage
+                  value
+                }
+                status
+                displayName
+                eADT {
+                  goal {
+                    amount
+                    percentage
+                    value
+                  }
+                  variance {
+                    amount
+                    percentage
+                    value
+                  }
+                  actual {
+                    amount
+                    percentage
+                    value
+                  }
+                  displayName
+                  status
+                }
+                aot {
+                  goal {
+                    percentage
+                  }
+                  variance {
+                    percentage
+                  }
+                  actual {
+                    percentage
+                  }
+                  displayName
+                  status
+                }
+                otd {
+                  goal {
+                    amount
+                    percentage
+                    value
+                  }
+                  variance {
+                    amount
+                    percentage
+                    value
+                  }
+                  actual {
+                    amount
+                    percentage
+                    value
+                  }
+                  displayName
+                  status
+                }
+                waitTime {
+                  goal {
+                    amount
+                    percentage
+                    value
+                  }
+                  variance {
+                    amount
+                    percentage
+                    value
+                  }
+                  actual {
+                    amount
+                    percentage
+                    value
+                  }
+                  displayName
+                  status
+                }
+                loadTime {
+                  goal {
+                    amount
+                    percentage
+                    value
+                  }
+                  variance {
+                    amount
+                    percentage
+                    value
+                  }
+                  actual {
+                    amount
+                    percentage
+                    value
+                  }
+                  displayName
+                  status
+                }
+                singles {
+                  goal {
+                    amount
+                    percentage
+                    value
+                  }
+                  variance {
+                    amount
+                    percentage
+                    value
+                  }
+                  actual {
+                    amount
+                    percentage
+                    value
+                  }
+                  displayName
+                  status
+                }
+                extremeDelivery {
+                  goal {
+                    amount
+                    percentage
+                    value
+                  }
+                  variance {
+                    amount
+                    percentage
+                    value
+                  }
+                  actual {
+                    amount
+                    percentage
+                    value
+                  }
+                  displayName
+                  status
+                }
+                status
+                displayName
+                narrative
+              }
+              cash {
+                actual {
+                  amount
+                  percentage
+                  value
+                }
+                goal {
+                  amount
+                  percentage
+                  value
+                }
+                variance {
+                  amount
+                  percentage
+                  value
+                }
+                displayName
+                status
+              }
+
+              oerStart {
+                goal {
+                  amount
+                  percentage
+                  value
+                }
+                variance {
+                  amount
+                  percentage
+                  value
+                }
+                actual {
+                  amount
+                  percentage
+                  value
+                }
+                displayName
+                status
+              }
+
+              labor {
+                goal {
+                  percentage
+                  amount
+                  percentage
+                  value
+                }
+                variance {
+                  percentage
+                  amount
+                  percentage
+                  value
+                }
+                actual {
+                  percentage
+                  amount
+                  percentage
+                  value
+                }
+                displayName
+                status
+              }
+            }
+        yesterday {
+          sales {
+            goal {
+              amount
+              value
+              percentage
+            }
+            variance {
+              amount
+              value
+              percentage
+            }
+            actual {
+              amount
+              value
+              percentage
+            }
+            displayName
+            status
+          }
+          food {
+            goal {
+              amount
+              value
+              percentage
+            }
+            actual {
+              amount
+              value
+              percentage
+            }
+            variance {
+              amount
+              value
+              percentage
+            }
+            status
+            displayName
+          }
+          service {
+            eADT {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            aot {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            otd {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            waitTime {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            loadTime {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            singles {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            extremeDelivery {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            status
+            displayName
+            narrative
+          }
+          cash {
+            actual {
+              amount
+              value
+              percentage
+            }
+            goal {
+              amount
+              value
+              percentage
+            }
+            variance {
+              amount
+              value
+              percentage
+            }
+            displayName
+            status
+          }
+
+          oerStart {
+            goal {
+              amount
+              value
+              percentage
+            }
+            variance {
+              amount
+              value
+              percentage
+            }
+            actual {
+              amount
+              value
+              percentage
+            }
+            displayName
+            status
+          }
+          labor {
+            goal {
+              amount
+              value
+              percentage
+            }
+            variance {
+              amount
+              value
+              percentage
+            }
+            actual {
+              amount
+              value
+              percentage
+            }
+            displayName
+            status
+          }
+        }
+        period(
+          filterType: $filterType
+          rangeFrom: $rangeFrom
+          rangeTo: $rangeTo
+        )
+        {
+          sales {
+            goal {
+              amount
+              value
+              percentage
+            }
+            variance {
+              amount
+              value
+              percentage
+            }
+            actual {
+              amount
+              value
+              percentage
+            }
+            displayName
+            status
+          }
+          food {
+            goal {
+              amount
+              value
+              percentage
+            }
+            actual {
+              amount
+              value
+              percentage
+            }
+            variance {
+              amount
+              value
+              percentage
+            }
+            status
+            displayName
+          }
+          service {
+            eADT {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            aot {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            otd {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            waitTime {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            loadTime {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            singles {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            extremeDelivery {
+              goal {
+                amount
+                value
+                percentage
+              }
+              variance {
+                amount
+                value
+                percentage
+              }
+              actual {
+                amount
+                value
+                percentage
+              }
+              displayName
+              status
+            }
+            status
+            displayName
+            narrative
+            goal {
+              amount
+              value
+              percentage
+            }
+            actual {
+              amount
+              value
+              percentage
+            }
+            variance {
+              amount
+              value
+              percentage
+            }
+          }
+          cash {
+            actual {
+              amount
+              value
+              percentage
+            }
+            goal {
+              amount
+              value
+              percentage
+            }
+            variance {
+              amount
+              value
+              percentage
+            }
+            displayName
+            status
+          }
+
+          oerStart {
+            goal {
+              amount
+              value
+              percentage
+            }
+            variance {
+              amount
+              value
+              percentage
+            }
+            actual {
+              amount
+              value
+              percentage
+            }
+            displayName
+            status
+          }
+          labor {
+            goal {
+              amount
+              value
+              percentage
+            }
+            variance {
+              amount
+              value
+              percentage
+            }
+            actual {
+              amount
+              value
+              percentage
+            }
+            displayName
+            status
+          }
+        }
+
+          }
+
+      stores(storeNumbers: $storeNumbers) {
+        period(
+          rangeTo: $rangeTo
+          rangeFrom: $rangeFrom
+          filterType :$filterType
+        ){
+        periodFrom
+        periodTo
+          sales {
+            goal {
+              amount
+              percentage
+              value
+            }
+            variance {
+              amount
+              percentage
+              value
+            }
+            actual {
+              amount
+              percentage
+              value
+            }
+            displayName
+            status
+          }
+          food {
+            goal {
+              amount
+              percentage
+              value
+            }
+            actual {
+              amount
+              percentage
+              value
+            }
+            variance {
+              amount
+              percentage
+              value
+            }
+            status
+            displayName
+          }
+          service {
+            goal {
+              amount
+              percentage
+              value
+            }
+            actual {
+              amount
+              percentage
+              value
+            }
+            variance {
+              amount
+              percentage
+              value
+            }
+            status
+            displayName
+            eADT {
+              goal {
+                amount
+                percentage
+                value
+              }
+              variance {
+                amount
+                percentage
+                value
+              }
+              actual {
+                amount
+                percentage
+                value
+              }
+              displayName
+              status
+            }
+            aot {
+              goal {
+                percentage
+              }
+              variance {
+                percentage
+              }
+              actual {
+                percentage
+              }
+              displayName
+              status
+            }
+            otd {
+              goal {
+                amount
+                percentage
+                value
+              }
+              variance {
+                amount
+                percentage
+                value
+              }
+              actual {
+                amount
+                percentage
+                value
+              }
+              displayName
+              status
+            }
+            waitTime {
+              goal {
+                amount
+                percentage
+                value
+              }
+              variance {
+                amount
+                percentage
+                value
+              }
+              actual {
+                amount
+                percentage
+                value
+              }
+              displayName
+              status
+            }
+            loadTime {
+              goal {
+                amount
+                percentage
+                value
+              }
+              variance {
+                amount
+                percentage
+                value
+              }
+              actual {
+                amount
+                percentage
+                value
+              }
+              displayName
+              status
+            }
+            singles {
+              goal {
+                amount
+                percentage
+                value
+              }
+              variance {
+                amount
+                percentage
+                value
+              }
+              actual {
+                amount
+                percentage
+                value
+              }
+              displayName
+              status
+            }
+            extremeDelivery {
+              goal {
+                amount
+                percentage
+                value
+              }
+              variance {
+                amount
+                percentage
+                value
+              }
+              actual {
+                amount
+                percentage
+                value
+              }
+              displayName
+              status
+            }
+            status
+            displayName
+            narrative
+          }
+          cash {
+            actual {
+              amount
+              percentage
+              value
+            }
+            goal {
+              amount
+              percentage
+              value
+            }
+            variance {
+              amount
+              percentage
+              value
+            }
+            displayName
+            status
+          }
+
+          oerStart {
+            goal {
+              amount
+              percentage
+              value
+            }
+            variance {
+              amount
+              percentage
+              value
+            }
+            actual {
+              amount
+              percentage
+              value
+            }
+            displayName
+            status
+          }
+
+          labor {
+            goal {
+              percentage
+              amount
+              percentage
+              value
+            }
+            variance {
+              percentage
+              amount
+              percentage
+              value
+            }
+            actual {
+              percentage
+              amount
+              percentage
+              value
+            }
+            displayName
+            status
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/actions_parent_linear"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/action_name"
+        style="@style/action_food"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/action_status"
+            style="@style/action_food_failed"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:orientation="horizontal">
+            <View
+                style="@style/action_circle_view"
+                android:background="@drawable/red_circle" />
+            <View
+                android:id="@+id/action_remaining_days_1"
+                style="@style/action_circle_view"
+                android:background="@drawable/neutral_circle" />
+            <View
+                android:id="@+id/action_remaining_days_2"
+                style="@style/action_circle_view"
+                android:background="@drawable/neutral_circle" />
+            <View
+                android:id="@+id/action_remaining_days_3"
+                style="@style/action_circle_view"
+                android:background="@drawable/neutral_circle" />
+            <View
+                android:id="@+id/action_remaining_days_4"
+                style="@style/action_circle_view"
+                android:background="@drawable/neutral_circle" />
+            <View
+                android:id="@+id/action_remaining_days_5"
+                style="@style/action_circle_view"
+                android:background="@drawable/neutral_circle" />
+            <View
+                android:id="@+id/action_remaining_days_6"
+                style="@style/action_circle_view"
+                android:background="@drawable/neutral_circle" />
+            <View
+                android:id="@+id/action_remaining_days_7"
+                style="@style/action_circle_view"
+                android:background="@drawable/neutral_circle" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/action_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_ui_text_bold"
+            android:text="@string/title_actions"
+            android:textSize="@dimen/_20ssp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_40sdp"/>
+        <TextView
+            android:id="@+id/past_action"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_ui_text_medium"
+            android:text="@string/past_actions"
+            android:textSize="@dimen/_11sdp"
+            android:gravity="end"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_40sdp"/>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/dotted_horizontal_line"
+        android:gravity="center"
+        android:orientation="vertical" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/action_rv"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:id="@+id/no_new_action_linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/no_past_action_background"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_ui_text_regular"
+            android:text="@string/no_new_actions"
+            android:textSize="@dimen/_11sdp"
+            android:gravity="center"
+            android:textColor="@color/no_past_action_color"/>
+    </LinearLayout>
+</LinearLayout>

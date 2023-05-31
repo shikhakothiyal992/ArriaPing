@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.filter.StoreFilterActivity"
+    android:background="@android:color/white">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_apply">
+            <include
+                android:id="@+id/common_header"
+                layout="@layout/common_view_for_pop_up" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="@drawable/linear_curve"
+                android:orientation="vertical">
+                <include
+                    layout="@layout/common_small_horizontal_line_header" />
+
+                <include
+                    android:id="@+id/common_header_filter"
+                    layout="@layout/common_header_filter_initial_screen" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/opacity_15"
+                    android:gravity="center"
+                    android:orientation="vertical" />
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:scrollbars="none"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    >
+                <RadioGroup
+                    android:id="@+id/period_selection_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_25sdp"
+                    android:visibility="visible">
+
+                    <RadioButton
+                        android:id="@+id/today_select"
+                        style="@style/filter_items"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:enabled="false"
+                        android:checked="false"
+                        android:alpha="0.5"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/today_text" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/opacity_15"
+                        android:gravity="center"
+                        android:orientation="vertical" />
+                    <RadioButton
+                        android:id="@+id/yesterday_select"
+                        style="@style/filter_items"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:layout_gravity="end"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:text="@string/yesterday_text" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/opacity_15"
+                        android:gravity="center"
+                        android:orientation="vertical" />
+                    <RadioButton
+                        android:id="@+id/this_week_select"
+                        style="@style/filter_items"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:text="@string/wtd_text" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/opacity_15"
+                        android:gravity="center"
+                        android:orientation="vertical" />
+                    <RadioButton
+                        android:id="@+id/last_week_select"
+                        style="@style/filter_items"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:text="@string/last_week_text" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/opacity_15"
+                        android:gravity="center"
+                        android:orientation="vertical" />
+                    <RadioButton
+                        android:id="@+id/this_month_select"
+                        style="@style/filter_items"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:text="@string/mtd_text" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/opacity_15"
+                        android:gravity="center"
+                        android:orientation="vertical" />
+                    <RadioButton
+                        android:id="@+id/last_month_select"
+                        style="@style/filter_items"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:text="@string/last_month_text" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/opacity_15"
+                        android:gravity="center"
+                        android:orientation="vertical" />
+                    <RadioButton
+                        android:id="@+id/this_year_select"
+                        style="@style/filter_items"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:text="@string/ytd_text" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/opacity_15"
+                        android:gravity="center"
+                        android:orientation="vertical" />
+                    <RadioButton
+                        android:id="@+id/last_year_select"
+                        style="@style/filter_items"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:text="@string/last_year_text" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/opacity_15"
+                        android:gravity="center"
+                        android:orientation="vertical" />
+                    <RadioButton
+                        android:id="@+id/last_seven_days_select"
+                        style="@style/filter_items"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:text="@string/last_seven_days" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/opacity_15"
+                        android:gravity="center"
+                        android:orientation="vertical" />
+                    <RadioButton
+                        android:id="@+id/last_twenty_eight_days_select"
+                        style="@style/filter_items"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:text="@string/last_twenty_eight" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/opacity_15"
+                        android:gravity="center"
+                        android:orientation="vertical" />
+                    <RadioButton
+                        android:id="@+id/custom_range_select"
+                        style="@style/filter_items"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
+                        android:fontFamily="@font/sf_ui_text_regular"
+                        android:text="@string/custom_range_text"
+                        android:layout_marginBottom="@dimen/_35sdp"/>
+                </RadioGroup>
+                </ScrollView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    <Button
+        android:id="@+id/btn_apply"
+        style="@style/button"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_border_blue"
+        android:textColor="@color/header_color"
+        android:text="@string/done_text" />
+</RelativeLayout>

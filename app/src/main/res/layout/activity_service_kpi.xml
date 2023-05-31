@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:layout_marginBottom="@dimen/_35sdp">
+    <LinearLayout
+        android:id="@+id/parent_relative"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            style="@style/cross_button_parent"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/cross_button_service"
+                style="@style/cross_button"
+                tools:ignore="ContentDescription" />
+            <LinearLayout
+                android:id="@+id/parent_data_on_scroll_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/level_two_scroll_data_action"
+                    style="@style/level_two_scroll_data_action"/>
+
+                <TextView
+                    android:id="@+id/level_two_scroll_data_action_value"
+                    style="@style/level_two_scroll_data_value"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <View
+            android:id="@+id/parent_data_on_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:visibility="gone"
+            android:background="@color/opacity_40"
+            android:gravity="center" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/service_scroll_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/parent_relative"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/service_text_small"
+            style="@style/level_two_data"
+            android:fontFamily="@font/sf_ui_text_bold"
+            android:textStyle="normal"
+            android:textColor="#000000"
+            android:text="@string/service_text"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="8sp"
+            android:textSize="@dimen/_18sdp"/>
+
+        <TextView
+            android:id="@+id/service_sales"
+            style="@style/level_two_data"
+            android:fontFamily="@font/sf_ui_text_bold"
+            android:textStyle="bold"
+            android:textColor="#009141"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="0sp"
+            android:textSize="@dimen/_28sdp"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_goal_and_variance_header"
+                android:text="@string/goal_text_small"/>
+
+            <TextView
+                style="@style/level_two_goal_and_variance_header"
+                android:text="@string/variance_text_small"/>
+            <TextView
+                style="@style/level_two_goal_and_variance_header"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/service_goal_value"
+                style="@style/level_two_goal_and_variance_value"/>
+
+            <TextView
+                android:id="@+id/service_variance_value"
+                style="@style/level_two_goal_and_variance_value"/>
+            <TextView
+                android:id="@+id/service_actual_value"
+                style="@style/level_two_goal_and_variance_value"/>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/service_kpi_error_layout"
+            layout="@layout/data_error_layout"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            />
+
+        <TextView
+            android:id="@+id/service_narrative_value"
+            style="@style/level_two_data_narrative1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView style="@style/alt_row_display_text" />
+
+            <TextView
+                style="@style/alt_row_display_text_goal_variance_actual"
+                android:gravity="end"
+                android:text="@string/goal_text"/>
+
+            <TextView
+                style="@style/alt_row_display_text_goal_variance_actual"
+                android:gravity="end"
+                android:text="@string/variance_text"/>
+
+            <TextView
+                style="@style/alt_row_display_text_goal_variance_actual"
+                android:gravity="end"
+                android:text="@string/actual_text"
+                    app:drawableEndCompat="@drawable/empty_circle"
+                android:drawablePadding="@dimen/_5sdp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/horizontal_line"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="4"
+            android:id="@+id/ll_eadt_display"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/eadt_display"
+                style="@style/alt_row_display_text"
+                tools:text="eADT"/>
+
+            <TextView
+                android:id="@+id/eadt_goal"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+
+            <TextView
+                android:id="@+id/eadt_variance"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+
+            <TextView
+                android:id="@+id/eadt_actual"
+                style="@style/alt_row_value_text"
+                android:gravity="end"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                app:drawableEndCompat="@drawable/empty_circle" />
+            <TextView
+                android:id="@+id/eadt_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:visibility="gone"
+               />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:id="@+id/ll_leg_time_text"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/leg_time_text"
+                style="@style/level_two_items"
+                android:textStyle="normal"
+                tools:text="Leg Time"/>
+
+            <TextView
+                android:id="@+id/leg_time_goal"
+                style="@style/level_two_items"
+                android:gravity="end"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/leg_time_variance"
+                style="@style/level_two_items"
+                android:gravity="end"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/leg_time_actual"
+                style="@style/level_two_items"
+                android:gravity="end"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableEndCompat="@drawable/empty_circle" />
+            <TextView
+                android:id="@+id/leg_time_error"
+                android:layout_weight="1.0"
+                android:visibility="gone"
+                style="@style/data_unavailable_overview_text_style"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/dotted_horizontal_line"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="4"
+            android:id="@+id/ll_extreme_delivery_display"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/extreme_delivery_display"
+                style="@style/alt_row_display_text"
+                tools:text="Extreme delivery"
+                />
+            <TextView
+                android:id="@+id/extreme_delivery_goal"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+
+            <TextView
+                android:id="@+id/extreme_delivery_variance"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+
+            <TextView
+                android:id="@+id/extreme_delivery_actual"
+                style="@style/alt_row_value_text"
+                android:gravity="end"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                app:drawableEndCompat="@drawable/empty_circle" />
+            <TextView
+                android:id="@+id/extreme_delivery_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:id="@+id/ll_delivery_order_count_service"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/delivery_order_count"
+                style="@style/level_two_items"
+                android:layout_weight="1"
+                android:textStyle="normal" />
+            <TextView
+                android:id="@+id/delivery_order_actual"
+                style="@style/level_two_items"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/delivery_order_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:layout_weight="1.0"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:id="@+id/ll_extreme_delivery_oc_text"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/extreme_delivery_oc_text"
+                style="@style/level_two_items"
+                android:textStyle="normal"
+                android:gravity="start"/>
+
+            <TextView
+                android:id="@+id/extreme_delivery_oc_goal"
+                style="@style/level_two_items"
+                android:gravity="end"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/extreme_delivery_oc_variance"
+                style="@style/level_two_items"
+                android:gravity="end"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/extreme_delivery_oc_actual"
+                style="@style/level_two_items"
+                android:gravity="end"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableEndCompat="@drawable/empty_circle" />
+            <TextView
+                android:id="@+id/extreme_delivery_oc_actual_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:layout_weight="1.0"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/dotted_horizontal_line"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:id="@+id/ll_single_display"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/single_display"
+                style="@style/alt_row_display_text" />
+
+            <TextView
+                android:id="@+id/single_percentage_goal"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/single_percentage_variance"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/single_percentage_actual"
+                style="@style/alt_row_value_text"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/single_percentage_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:id="@+id/ll_double_text"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/double_text"
+                style="@style/level_two_items"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/double_percentage"
+                style="@style/level_two_items"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/double_percentage_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:layout_weight="1.0"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:id="@+id/ll_triples_text"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/triples_text"
+                style="@style/level_two_items"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/triple_percentage"
+                style="@style/level_two_items"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/triple_percentage_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:layout_weight="1.0"
+                android:visibility="gone"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/dotted_horizontal_line"
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="4"
+            android:id="@+id/ll_load_time_display"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/load_time_display"
+                style="@style/alt_row_display_text"/>
+
+            <TextView
+                android:id="@+id/load_time_goal"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/load_time_variance"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/load_time_actual"
+                style="@style/alt_row_value_text"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/load_time_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:id="@+id/ll_carry_out_laod_time_text"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/carry_out_laod_time_text"
+                style="@style/level_two_items"
+                android:layout_weight="1"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/carry_out_laod_time_percentage"
+                style="@style/level_two_items"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/carry_out_laod_time_percentage_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:visibility="gone"
+                android:layout_weight="1.0"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/dotted_horizontal_line"
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="4"
+            android:id="@+id/ll_wait_time_display"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/wait_time_display"
+                style="@style/alt_row_display_text"/>
+
+            <TextView
+                android:id="@+id/wait_time_goal"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/wait_time_variance"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/wait_time_actual"
+                style="@style/alt_row_value_text"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/wait_time_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/dotted_horizontal_line"
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="4"
+            android:id="@+id/ll_otd_display"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/otd_display"
+                style="@style/alt_row_display_text"/>
+
+            <TextView
+                android:id="@+id/otd_goal"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/otd_variance"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/otd_actual"
+                style="@style/alt_row_value_text"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/otd_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/dotted_horizontal_line"
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="4"
+            android:id="@+id/aot_parent"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/aot_display"
+                style="@style/alt_row_display_text"/>
+
+            <TextView
+                android:id="@+id/aot_goal"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/aot_variance"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/aot_actual"
+                style="@style/alt_row_value_text"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/aot_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:id="@+id/hang_up_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/hang_up_text"
+                style="@style/level_two_items"
+                android:layout_weight="1"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/hang_up_percentage"
+                style="@style/level_two_items"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/hang_up_percentage_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:layout_weight="1.0"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/aot_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/dotted_horizontal_line"
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="4"
+            android:visibility="gone"
+            android:id="@+id/out_the_door_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/out_the_door_display"
+                style="@style/alt_row_display_text"/>
+
+            <TextView
+                android:id="@+id/out_door_goal"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/out_door_variance"
+                style="@style/alt_row_value_text"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/out_door_actual"
+                style="@style/alt_row_value_text"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/out_door_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+        <View
+            android:id="@+id/out_the_door_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:visibility="gone"
+            android:background="@drawable/dotted_horizontal_line"
+            android:gravity="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:visibility="gone"
+            android:id="@+id/csat_meter_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:id="@+id/csat_display"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_ui_text_heavy" />
+
+            <TextView
+                android:id="@+id/csat_goal"
+                style="@style/level_two_items"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/sf_ui_text_bold"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/csat_goal_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:layout_weight="1.0"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:visibility="gone"
+            android:id="@+id/weekly_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/weekly_text"
+                style="@style/level_two_items"
+                android:textStyle="normal"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/weekly_percentage"
+                style="@style/level_two_items"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/weekly_percentage_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:layout_weight="1.0"
+                android:visibility="gone"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:visibility="gone"
+            android:id="@+id/cc_per_100_text_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cc_per_100_text"
+                style="@style/level_two_items"
+                android:textStyle="normal"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/cc_per_100_percentage"
+                style="@style/level_two_items"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/_5sdp"
+                app:drawableEndCompat="@drawable/empty_circle"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/cc_per_100_percentage_error"
+                style="@style/data_unavailable_overview_text_style"
+                android:layout_weight="1.0"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+        <View
+            android:id="@+id/csat_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:visibility="gone"
+            android:background="@drawable/dotted_horizontal_line"
+            android:gravity="center" />
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

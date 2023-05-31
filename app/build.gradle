@@ -1,0 +1,306 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'com.google.gms.google-services'
+    id("com.apollographql.apollo").version("2.5.3")
+    id("kotlin-android-extensions")
+    id("kotlin-kapt")
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.6.21'
+    id 'dagger.hilt.android.plugin'
+}
+
+def buildStageEnvironment  =  (System.getenv("build_variants") as String) ?: "NonCI"
+def appVersionName =  (System.getenv("APP_VERSION_NUMBER") as String) ?: "1.1"
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+     def appVersionCode =  rootProject.properties.get("build.number") as Integer
+
+    defaultConfig {
+        applicationId "com.arria.ping"
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode appVersionCode ?: 12
+        versionName appVersionName
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+
+    buildTypes {
+        if(buildStageEnvironment == "NonCI"){
+            applicationVariants.all {
+                variants ->
+                    variants.outputs.each {
+                        output ->
+                            def buildName
+                            if (productFlavors.name.contains("dev")) {
+                                buildName = "PingAnalyst_dev"
+                            } else if (productFlavors.name.contains("qa")) {
+                                buildName = "PingAnalyst_staging"
+                            } else {
+                                buildName = "PingAnalyst"
+                            }
+                            def name = "${buildName}.apk"
+                            output.outputFileName = name
+                    }
+            }
+            android.variantFilter { variant ->
+                if (variant.buildType.name == 'release' && variant.getFlavors().get(0).name == 'dev') {
+                    variant.setIgnore(true)
+                }
+                if (variant.buildType.name == 'release' && variant.getFlavors().get(0).name == 'qa') {
+                    variant.setIgnore(true)
+                }
+                if (variant.buildType.name == 'debug' && variant.getFlavors().get(0).name == 'production') {
+                    variant.setIgnore(true);
+                }
+            }
+        }
+        else{
+            if (buildStageEnvironment == "dev") {
+                applicationVariants.all {
+                    variants ->
+                        variants.outputs.each {
+                            output ->
+                                def name = "PingAnalyst_dev.apk"
+                                output.outputFileName = name
+                        }
+                }
+                android.variantFilter { variant ->
+                    if (variant.buildType.name == 'release' && variant.getFlavors().get(0).name == 'dev') {
+                        variant.setIgnore(true);
+                    }
+                }
+            }
+            else if (buildStageEnvironment == "staging") {
+                applicationVariants.all {
+                    variants ->
+                        variants.outputs.each {
+                            output ->
+                                def name = "PingAnalyst_staging.apk"
+                                output.outputFileName = name
+                        }
+                }
+                android.variantFilter { variant ->
+                    if (variant.buildType.name == 'release' && variant.getFlavors().get(0).name == 'qa') {
+                        variant.setIgnore(true);
+                    }
+                }
+            }
+            else{
+                applicationVariants.all {
+                    variants ->
+                        variants.outputs.each {
+                            output ->
+                                def name = "PingAnalyst.apk"
+                                output.outputFileName = name
+                        }
+                }
+                android.variantFilter { variant ->
+                    if (variant.buildType.name == 'debug' && variant.getFlavors().get(0).name == 'production') {
+                        variant.setIgnore(true);
+                    }
+                }
+            }
+        }
+    }
+
+    flavorDimensions "version"
+    productFlavors {
+        if(buildStageEnvironment == "NonCI"){
+            dev {
+                dimension "version"
+                resValue "string", "app_name", "Ping Analyst dv"
+                applicationIdSuffix ".dev"
+                buildConfigField "String", "BASE_URL_AUTH", "\"https://auth-api.pingdev.arria.com\""
+                buildConfigField "String", "BASE_URL_KPI", "\"https://analytics-qsr-api.pingdev.arria.com\""
+                buildConfigField "String", "BASE_URL_PROFILE", "\"https://userprofile-qsr-api.pingdev.arria.com\""
+                buildConfigField "String", "AWS_CLOUD_LOGS_GROUP", "\"Arria_Mobile_App_Logs\""
+                buildConfigField "String", "AWS_COGNITO_IDENTITY_POOL_ID", "\"us-west-2:d2661aa5-7ab8-41f5-a7de-048795daf018\""
+                buildConfigField "String", "AWS_COGNITO_LOGIN_KEY", "\"cognito-idp.us-west-2.amazonaws.com/us-west-2_W0FUPIGOI\""
+            }
+            qa {
+                // Staging
+                dimension "version"
+                resValue "string", "app_name", "Ping Analyst st"
+                applicationIdSuffix ".qa"
+                buildConfigField "String", "BASE_URL_AUTH", "\"https://auth-api.pingstaging.arria.com\""
+                buildConfigField "String", "BASE_URL_KPI", "\"https://analytics-qsr-api.pingstaging.arria.com\""
+                buildConfigField "String", "BASE_URL_PROFILE", "\"https://userprofile-qsr-api.pingstaging.arria.com\""
+                buildConfigField "String", "AWS_CLOUD_LOGS_GROUP", "\"Arria_Mobile_App_Logs\""
+                buildConfigField "String", "AWS_COGNITO_IDENTITY_POOL_ID", "\"us-west-2:0c3468a0-0fcd-4ceb-98ec-d03eaffdddb8\""
+                buildConfigField "String", "AWS_COGNITO_LOGIN_KEY", "\"cognito-idp.us-west-2.amazonaws.com/us-west-2_aQ9hyEzUL\""
+            }
+            production {
+                dimension "version"
+                resValue "string", "app_name", "Ping Analyst"
+                buildConfigField "String", "BASE_URL_AUTH", "\"https://auth-api.ping.arria.com\""
+                buildConfigField "String", "BASE_URL_KPI", "\"https://analytics-qsr-api.ping.arria.com\""
+                buildConfigField "String", "BASE_URL_PROFILE", "\"https://userprofile-qsr-api.ping.arria.com\""
+                buildConfigField "String", "AWS_CLOUD_LOGS_GROUP", "\"Arria_Mobile_App_Logs\""
+                buildConfigField "String", "AWS_COGNITO_IDENTITY_POOL_ID", "\"us-west-2:be7996b4-4b20-4f71-b6de-a1282d8ae0f9\""
+                buildConfigField "String", "AWS_COGNITO_LOGIN_KEY", "\"cognito-idp.us-west-2.amazonaws.com/us-west-2_NMTmYLzKB\""
+            }
+        }else {
+            if (buildStageEnvironment == "dev") {
+                dev {
+                    dimension "version"
+                    resValue "string", "app_name", "Ping Analyst dv"
+                    applicationIdSuffix ".dev"
+                    buildConfigField "String", "BASE_URL_AUTH", "\"https://auth-api.pingdev.arria.com\""
+                    buildConfigField "String", "BASE_URL_KPI", "\"https://analytics-qsr-api.pingdev.arria.com\""
+                    buildConfigField "String", "BASE_URL_PROFILE", "\"https://userprofile-qsr-api.pingdev.arria.com\""
+                    buildConfigField "String", "AWS_CLOUD_LOGS_GROUP", "\"Arria_Mobile_App_Logs\""
+                    buildConfigField "String", "AWS_COGNITO_IDENTITY_POOL_ID", "\"us-west-2:d2661aa5-7ab8-41f5-a7de-048795daf018\""
+                    buildConfigField "String", "AWS_COGNITO_LOGIN_KEY", "\"cognito-idp.us-west-2.amazonaws.com/us-west-2_W0FUPIGOI\""
+                }
+            } else if (buildStageEnvironment == "staging") {
+                qa {
+                    // Staging
+                    dimension "version"
+                    resValue "string", "app_name", "Ping Analyst st"
+                    applicationIdSuffix ".qa"
+                    buildConfigField "String", "BASE_URL_AUTH", "\"https://auth-api.pingstaging.arria.com\""
+                    buildConfigField "String", "BASE_URL_KPI", "\"https://analytics-qsr-api.pingstaging.arria.com\""
+                    buildConfigField "String", "BASE_URL_PROFILE", "\"https://userprofile-qsr-api.pingstaging.arria.com\""
+                    buildConfigField "String", "AWS_CLOUD_LOGS_GROUP", "\"Arria_Mobile_App_Logs\""
+                    buildConfigField "String", "AWS_COGNITO_IDENTITY_POOL_ID", "\"us-west-2:0c3468a0-0fcd-4ceb-98ec-d03eaffdddb8\""
+                    buildConfigField "String", "AWS_COGNITO_LOGIN_KEY", "\"cognito-idp.us-west-2.amazonaws.com/us-west-2_aQ9hyEzUL\""
+                }
+            }else{
+                production {
+                    dimension "version"
+                    resValue "string", "app_name", "Ping Analyst"
+                    buildConfigField "String", "BASE_URL_AUTH", "\"https://auth-api.ping.arria.com\""
+                    buildConfigField "String", "BASE_URL_KPI", "\"https://analytics-qsr-api.ping.arria.com\""
+                    buildConfigField "String", "BASE_URL_PROFILE", "\"https://userprofile-qsr-api.ping.arria.com\""
+                    buildConfigField "String", "AWS_CLOUD_LOGS_GROUP", "\"Arria_Mobile_App_Logs\""
+                    buildConfigField "String", "AWS_COGNITO_IDENTITY_POOL_ID", "\"us-west-2:be7996b4-4b20-4f71-b6de-a1282d8ae0f9\""
+                    buildConfigField "String", "AWS_COGNITO_LOGIN_KEY", "\"cognito-idp.us-west-2.amazonaws.com/us-west-2_NMTmYLzKB\""
+                }
+            }
+
+        }
+
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dexOptions {
+        preDexLibraries true
+        javaMaxHeapSize "8G"
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+        //jvmTarget = JavaVersion.VERSION_12.toString()
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+
+    }
+
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+        exclude 'META-INF/library_release.kotlin_module'
+      //  exclude 'META-INF/gradle/incremental.annotation.processors'
+    }
+
+    // JOSNObject unit test
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+}
+
+dependencies {
+
+    def hilt_version = "2.42"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.0-alpha05'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // apollo
+    implementation("com.apollographql.apollo:apollo-runtime:2.5.3")
+    implementation("com.apollographql.apollo:apollo-coroutines-support:2.5.3")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
+    implementation("androidx.recyclerview:recyclerview:1.2.0")
+   // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation "com.chibatching.kotpref:kotpref:2.5.0"
+    implementation 'com.archit.calendar:awesome-calendar:2.0.0'
+    implementation 'androidx.room:room-ktx:2.2.5'
+
+    kapt "androidx.room:room-compiler:2.2.5"
+    implementation "androidx.biometric:biometric:1.2.0-alpha01"
+    implementation 'com.github.prolificinteractive:material-calendarview:2.0.0'
+    implementation platform('com.google.firebase:firebase-bom:28.4.0')
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+
+    //AWS
+    implementation "com.amazonaws:aws-android-sdk-logs:2.6.30"
+
+    //Unit Test libraries
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "com.google.truth:truth:1.1.2"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation "com.google.truth:truth:1.1.2"
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+
+    // JOSNObject unit test
+    testImplementation 'org.json:json:20211205'
+    testImplementation 'org.skyscreamer:jsonassert:1.5.0'
+
+    //JSON conversion
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0")
+
+    //Dagger-Hilt
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+
+    implementation 'androidx.fragment:fragment-ktx:1.3.1'
+    implementation 'androidx.activity:activity-ktx:1.3.1'
+
+    //Swipe or pull down to Refresh
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+}
+apollo {
+    // configure ApolloExtension here
+    generateKotlinModels.set(true) // Generate Kotlin models for all services
+
+    service("kpi") {
+        sourceFolder.set("com/arria/ping/kpi")
+        rootPackageName.set("com.arria.ping.kpi")
+    }
+    service("profile") {
+        sourceFolder.set("com/arria/ping/profile")
+        rootPackageName.set("com.arria.ping.profile")
+    }
+    graphqlSourceDirectorySet.include("**/*.graphql")
+    graphqlSourceDirectorySet.exclude("**/schema.graphql")
+}

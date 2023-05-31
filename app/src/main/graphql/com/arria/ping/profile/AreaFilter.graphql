@@ -1,0 +1,5 @@
+query AreaFilter{
+  user  {
+      areas
+     }
+}

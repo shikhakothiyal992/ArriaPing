@@ -1,0 +1,5 @@
+query StoreFilter($areas:[String!], $states:[String!],$supervisorNumbers:[String!]){
+  user  {
+    stores(areas:$areas, states:$states,supervisors:$supervisorNumbers)
+  }
+}

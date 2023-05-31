@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/navigation_bonus"
+            android:icon="@drawable/ic_bottom_nav_bonus_inactive"
+            android:enabled="false"
+            android:title="@string/title_bonus" />
+
+    <item
+            android:id="@+id/navigation_kpis"
+            android:icon="@drawable/ic_kpi_selected"
+            android:title="@string/title_kpis" />
+
+    <item
+            android:id="@+id/navigation_action"
+            android:icon="@drawable/ic_bottom_nav_action_inactive"
+            android:enabled="false"
+            android:title="@string/title_actions" />
+    <item
+            android:id="@+id/navigation_phone"
+            android:icon="@drawable/ic_bottom_nav_phone_inactive"
+            android:enabled="false"
+            android:title="@string/title_dashboard" />
+
+    <item
+            android:id="@+id/navigation_more"
+            android:icon="@drawable/ic_bottom_nav_settings_unselected"
+            android:title="@string/title_settings" />
+
+</menu>

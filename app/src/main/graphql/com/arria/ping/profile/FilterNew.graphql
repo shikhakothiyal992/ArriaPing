@@ -1,0 +1,21 @@
+query FilterNew($areaCode:[String!],$stateCodes:[String!],$supervisorNumbers:[String!],
+  $storeNumbers:[String!],$gms:[String!]){
+  user {
+    email
+    firstName
+    lastName
+    role
+    stores(states:$stateCodes,supervisors:$supervisorNumbers,gms:$gms,areas:$areaCode)
+    states(stores:$storeNumbers,supervisors:$supervisorNumbers,gms:$gms,areas:$areaCode)
+    areas(stores:$storeNumbers,states:$stateCodes,supervisors:$supervisorNumbers,gms:$gms)
+    supervisors(stores:$storeNumbers,states:$stateCodes,gms:$gms,areas:$areaCode){
+      supervisorName
+      supervisorUserID
+    }
+    generalManagers(stores:$storeNumbers,states:$stateCodes,supervisors:$supervisorNumbers,areas:$areaCode){
+      gmUserID
+      gmName
+    }
+  }
+
+}

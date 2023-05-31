@@ -1,0 +1,51 @@
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="start"
+    android:layout_marginStart="18dp"
+    android:layout_marginEnd="30dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/error_round_background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <View
+        android:layout_width="10dp"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/header_data_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="52dp"
+            tools:text="@string/some_data_unavailable"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/sf_ui_text_bold"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/header_data_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            tools:text="All restaurants are not returning data for a total of 594 days in the period that you've selected.  Please get in touch to fix this as it will make your figures incomplete."
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/sf_ui_text_regular"
+            android:textSize="12sp"
+            android:textStyle="normal"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.generalview.LoginActivity"
+    android:background="@android:color/white">
+
+    <include
+        android:id="@+id/common_header"
+        layout="@layout/common_view_for_pop_up" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="-60dp"
+        android:background="@drawable/linear_curve"
+        android:orientation="vertical">
+        <include
+            layout="@layout/common_small_horizontal_line_header" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_35sdp">
+            <TextView
+                android:id="@+id/change_pwd_heading_text"
+                style="@style/text_sub_heading"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:text="@string/new_password_text"/>
+            <ImageView
+                android:id="@+id/change_pwd_heading"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_icon_close"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/opacity_30"
+            android:gravity="center"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/text_hint"
+            style="@style/text_sub_heading"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_48sdp"
+            android:fontFamily="@font/sf_ui_text_regular"
+            android:gravity="center"
+
+            android:text="@string/setup_text"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/_14ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_layout_after_otp_verify_new_pswrd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_46sdp"
+                android:hint="@string/new_password_text"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="normal"
+                android:theme="@style/myTextInputLabel"
+                android:background="@drawable/edit_text_border"
+                app:boxStrokeColor="@color/white"
+                app:boxStrokeWidth="0dp"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="false"
+                android:textColorHint="#C0C0C0"
+                app:hintTextColor="#C0C0C0"
+                app:passwordToggleEnabled="true"
+                android:paddingStart="@dimen/_18sdp"
+                android:fontFamily="@font/sf_ui_text_regular"
+                app:passwordToggleTint="@android:color/black"
+                android:paddingEnd="@dimen/_5sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_after_otp_verify_new_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cursorVisible="true"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword|textNoSuggestions"
+                    android:maxLength="30"
+                    android:background="@null"
+                    android:hint="@string/new_password_text_small"
+                    android:textColorHint="@color/hint_color"
+                    android:textColor="@color/neutral"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/_14ssp"
+                    android:fontFamily="@font/sf_ui_text_regular"
+                    android:textStyle="normal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_layout_after_otp_verify_confirm_pswrd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_46sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:hint="@string/confirm_password_text"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="normal"
+                android:theme="@style/myTextInputLabel"
+                android:background="@drawable/edit_text_border"
+                app:boxStrokeColor="@color/white"
+                app:boxStrokeWidth="0dp"
+                app:hintAnimationEnabled="true"
+                app:passwordToggleEnabled="true"
+                android:paddingStart="@dimen/_18sdp"
+                app:hintEnabled="false"
+                android:textColorHint="#C0C0C0"
+                app:hintTextColor="#C0C0C0"
+                android:fontFamily="@font/sf_ui_text_regular"
+                app:passwordToggleTint="@android:color/black"
+                android:paddingEnd="@dimen/_5sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_after_otp_verify_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cursorVisible="true"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword|textNoSuggestions"
+                    android:maxLength="30"
+                    android:background="@null"
+                    android:textColorHint="@color/hint_color"
+                    android:hint="@string/confirm_password_text"
+                    android:textColor="@color/neutral"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/_14ssp"
+                    android:fontFamily="@font/sf_ui_text_regular"
+                    android:textStyle="normal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_after_otp_verify_confirm"
+            style="@style/button"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:background="@drawable/button_border"
+            android:text="@string/confirm_text" />
+    </LinearLayout>
+</LinearLayout>

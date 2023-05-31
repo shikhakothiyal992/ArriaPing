@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_50sdp"
+    android:background="@android:color/white"
+    tools:context=".ui.kpi.gm.view.GMTodayKpiFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/_30ssp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/common_header_today"
+                layout="@layout/common_header" />
+
+            <TextView
+                android:id="@+id/hrs_remaining_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:fontFamily="@font/sf_compact_text_bold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="4sp"
+                android:text="10 hrs to go in the day"
+                android:textAllCaps="true"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_9ssp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/check_in_rcv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_15sdp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/check_in_rcv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView style="@style/alt_row_display_text" />
+
+                <TextView
+                    style="@style/alt_row_display_text_goal_variance_actual"
+                    android:gravity="end"
+                    android:text="@string/goal_text" />
+
+                <TextView
+                    style="@style/alt_row_display_text_goal_variance_actual"
+                    android:gravity="end"
+                    android:text="@string/variance_text" />
+
+                <TextView
+                    style="@style/alt_row_display_text_goal_variance_actual"
+                    android:drawableEnd="@drawable/empty_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="end"
+                    android:text="@string/actual_text" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:background="@color/opacity_40"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/aws_parent_today_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/aws_display_today_kpi"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/sales_goal_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/sales_variance_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/sales_actual_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <LinearLayout
+                    android:id="@+id/labour_parent_today_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/labour_display_today_kpi"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/labour_goal_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/labour_variance_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/labour_actual_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <LinearLayout
+                    android:id="@+id/service_parent_today_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/service_display_today_kpi"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/service_goal_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/service_variance_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/service_actual_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/eADT_display_today_kpi"
+                        style="@style/alt_row_display_text"
+                        android:fontFamily="@font/sf_ui_text_medium" />
+
+                    <TextView
+                        android:id="@+id/service_eADT_goal_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/service_eADT_variance_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/service_eADT_actual_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/extreme_delivery_display_today_kpi"
+                        style="@style/alt_row_display_text"
+                        android:fontFamily="@font/sf_ui_text_medium" />
+
+                    <TextView
+                        android:id="@+id/service_extreme_goal_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/service_extreme_variance_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/service_extreme_actual_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/single_display_today_kpi"
+                        style="@style/alt_row_display_text"
+                        android:fontFamily="@font/sf_ui_text_medium" />
+
+                    <TextView
+                        android:id="@+id/service_singles_goal_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/service_singles_variance_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/service_singles_actual_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <LinearLayout
+                    android:id="@+id/cash_parent_today_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/cash_display_today_kpi"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/cash_goal_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/cash_variance_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/cash_actual_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+                <LinearLayout
+                    android:id="@+id/oer_parent_today_kpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/oer_display_today_kpi"
+                        style="@style/alt_row_display_text" />
+
+                    <TextView
+                        android:id="@+id/oer_goal_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/oer_variance_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:gravity="end" />
+
+                    <TextView
+                        android:id="@+id/oer_actual_today_kpi"
+                        style="@style/alt_row_value_text"
+                        android:drawableEnd="@drawable/empty_circle"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/sf_ui_text_bold"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <View
+                    style="@style/dotted_horizontal_line"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/dotted_horizontal_line" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/alert_button_today"
+        style="@style/alert_button"
+        android:background="@drawable/alert_border"
+        android:text="4pm check-in" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

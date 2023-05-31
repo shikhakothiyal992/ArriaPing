@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@android:color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/_30ssp">
+    <ImageView
+        android:id="@+id/change_pwd_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_20sdp"
+        android:src="@drawable/cancel"
+        tools:ignore="ContentDescription" />
+    <TextView
+        style="@style/level_two_data"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_16sdp"
+        android:text="@string/awus_text" />
+    <TextView
+        android:id="@+id/awus_sales"
+        style="@style/level_two_data"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/header_color"
+        android:textSize="@dimen/_28sdp"
+        android:text="$ 40000" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_data"
+                android:text="@string/goal_text_small"
+                android:textSize="@dimen/_12sdp"/>
+
+            <TextView
+                android:id="@+id/labour_variance"
+                style="@style/level_two_data"
+                android:layout_marginStart="@dimen/_50sdp"
+                android:text="@string/variance_text_small"
+                android:textSize="@dimen/_12sdp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/awus_goal_value"
+                style="@style/level_two_data"
+                android:text="@string/goal_text_small"
+                android:textSize="@dimen/_12sdp"/>
+
+            <TextView
+                android:id="@+id/awus__variance_value"
+                style="@style/level_two_data"
+                android:layout_marginStart="@dimen/_50sdp"
+                android:text="@string/variance_text_small"
+                android:textSize="@dimen/_12sdp"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/awus_narrative_value"
+            style="@style/level_two_data"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/awus_text" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:background="@drawable/horizontal_line"/>
+// pcy
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/pcy" />
+
+            <TextView
+                android:id="@+id/pcy_percentage"
+                style="@style/level_two_items"
+                android:text="@string/pcy"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/olo_pcy" />
+
+            <TextView
+                android:id="@+id/olo_pcy_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/phone_pcys" />
+
+            <TextView
+                android:id="@+id/phone_pcy_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/walkin_pcy" />
+
+            <TextView
+                android:id="@+id/walkin_pcy_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/delivery_pcy" />
+
+            <TextView
+                android:id="@+id/delivery_pcy_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/carry_out_pcy" />
+
+            <TextView
+                android:id="@+id/carry_out_pcy_percentage"
+                style="@style/level_two_items"
+                android:text="@string/pcy"
+                android:gravity="end"/>
+        </LinearLayout>
+        //order count
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:background="@drawable/dotted_horizontal_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/order_count" />
+
+            <TextView
+                android:id="@+id/oc_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/olo_order_count" />
+
+            <TextView
+                android:id="@+id/oc_pcy_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/phone_order_count" />
+
+            <TextView
+                android:id="@+id/phone_oc_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/walkin_order_count" />
+
+            <TextView
+                android:id="@+id/walkin_oc_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/delivery_order_count" />
+
+            <TextView
+                android:id="@+id/delivery_oc_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/carry_outorder_count" />
+
+            <TextView
+                android:id="@+id/carry_out_oc_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        //Average  Ticket
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:background="@drawable/dotted_horizontal_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/average_ticket" />
+
+            <TextView
+                android:id="@+id/average_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/olo_average_ticket" />
+
+            <TextView
+                android:id="@+id/average_olo_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/average_phone_ticket" />
+
+            <TextView
+                android:id="@+id/average_phone_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/average_walkin_ticket" />
+
+            <TextView
+                android:id="@+id/walkin_average_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/delivery_average_tickets" />
+
+            <TextView
+                android:id="@+id/delivery_percentage_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/carry_average_tickets" />
+
+            <TextView
+                android:id="@+id/carry_out_average_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        //OLO  Sales
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:background="@drawable/dotted_horizontal_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/olo_sales" />
+
+            <TextView
+                android:id="@+id/olo_sales_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/olo_pcy" />
+
+            <TextView
+                android:id="@+id/olo_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/olo_order_count" />
+
+            <TextView
+                android:id="@+id/olo_order_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/olo_average_ticket" />
+
+            <TextView
+                android:id="@+id/olo_average_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        //phone  Sales
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:background="@drawable/dotted_horizontal_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/phone_sales" />
+
+            <TextView
+                android:id="@+id/phone_sales_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/phone_order_count" />
+
+            <TextView
+                android:id="@+id/phone_sales_order_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        //walkin  Sales
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:background="@drawable/dotted_horizontal_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/walkin_sales" />
+
+            <TextView
+                android:id="@+id/walkin_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/phone_order_count" />
+
+            <TextView
+                android:id="@+id/phone_order_count_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        //deliver  Sales
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:background="@drawable/dotted_horizontal_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/delivery_sales" />
+
+            <TextView
+                android:id="@+id/delivery_sales_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/delivery_average_tickets" />
+
+            <TextView
+                android:id="@+id/delivery_average_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        //carryout  Sales
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:background="@drawable/dotted_horizontal_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/carry_out_sales" />
+
+            <TextView
+                android:id="@+id/carryout_average_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/level_two_items"
+                android:text="@string/phone_order_count" />
+
+            <TextView
+                android:id="@+id/phone_order_percentage"
+                style="@style/level_two_items"
+                android:gravity="end"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

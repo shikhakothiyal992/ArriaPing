@@ -1,0 +1,63 @@
+query GMAction($storeNumber:String!) {
+    generalManager{
+        actions{
+            store (storeNumber:$storeNumber) {
+                storeName
+                storeNumber
+                    currentActions{
+                        actionMetric{
+                            displayName
+                            goal{
+                                amount
+                            }
+                            variance{
+                                percentage
+                            }
+                            actual{
+                                amount
+                            }
+                            status
+
+                        }
+                        actionTitle
+                        narrative
+                        actionsToPerform
+                        sevenDayTrackerNarrative
+                        actionCreatedOn
+                        actionAcceptedOn
+                        actionCompletedOn
+                        actionRemainingDays
+                        actionStatus
+
+                    }
+                    pastActions{
+
+                        actionMetric{
+                            displayName
+                            goal{
+                                amount
+                            }
+                            variance{
+                                percentage
+                            }
+                            actual{
+                                amount
+                            }
+                            status
+
+                        }
+                        actionTitle
+                        narrative
+                        actionsToPerform
+                        sevenDayTrackerNarrative
+                        actionCreatedOn
+                        actionAcceptedOn
+                        actionCompletedOn
+                        actionRemainingDays
+                        actionStatus
+
+                    }
+                }
+        }
+    }
+}

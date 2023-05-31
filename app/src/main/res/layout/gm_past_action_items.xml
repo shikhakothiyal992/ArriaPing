@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/action_parent_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+        <TextView
+            android:id="@+id/action_main_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/sf_ui_text_heavy"
+            />
+        <TextView
+            android:id="@+id/action_main_item_usage"
+            android:fontFamily="@font/sf_ui_text_regular"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/action_to_perform"
+            android:fontFamily="@font/sf_ui_text_bolditalic"
+            android:textSize="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:textColor="@color/dark_green"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/dotted_horizontal_line"
+            android:gravity="center" />
+</LinearLayout>

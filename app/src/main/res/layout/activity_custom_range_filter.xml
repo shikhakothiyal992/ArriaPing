@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    tools:context=".ui.filter.StoreFilterActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/common_header"
+            layout="@layout/common_view_for_pop_up" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/linear_curve"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/custom_calendar_header_layout"
+                layout="@layout/customize_calendar_header" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/opacity_15"
+                android:gravity="center"
+                android:orientation="vertical" />
+
+            <com.archit.calendardaterangepicker.customviews.DateRangeCalendarView
+                android:id="@+id/calendar_custom_range"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:date_selection_mode="free_range"
+                custom:disable_date_color="#C0C0C0"
+                custom:range_color="#CCE4EE"
+                custom:selected_date_circle_color="@color/header_color"
+                custom:text_size_date="0dp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_18sdp"
+                custom:text_size_title="@dimen/_10sdp"
+                custom:text_size_week="@dimen/_10sdp"
+                custom:title_color="@color/black"
+                    />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_apply"
+            style="@style/button"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/button_border_blue"
+            android:textColor="@color/header_color"
+            android:text="@string/done_text" />
+    </RelativeLayout>
+</ScrollView>

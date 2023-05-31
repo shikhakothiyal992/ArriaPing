@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/_7sdp"
+    android:paddingTop="@dimen/_7sdp"
+    android:paddingEnd="@dimen/_2sdp"
+    android:paddingStart="0dp"
+    android:id="@+id/expandable_supervisor_item_parent"
+    android:orientation="horizontal"
+    android:weightSum="5"
+    android:background="@android:color/white">
+
+    <TextView
+            android:id="@+id/supervisor_expandable_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center_horizontal"
+            app:drawableStartCompat="@drawable/expand_list_indicator_down"
+            />
+
+    <TextView
+        android:id="@+id/supervisor_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:fontFamily="@font/sf_ui_text_heavy"
+        android:paddingEnd="0dp"
+        android:textSize="@dimen/_10ssp"
+        tools:text="Test" />
+
+    <LinearLayout
+        android:id="@+id/supervisor_goal_layout"
+        android:layout_weight="1.02"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/supervisor_goal"
+            style="@style/alt_row_value_text"
+            android:gravity="end"
+            android:visibility="visible"
+            tools:text="goal"/>
+        <TextView
+            android:id="@+id/supervisor_goal_error"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat="@drawable/ic_error"
+            android:gravity="end"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/supervisor_variance_layout"
+        android:layout_weight="1.02"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/supervisor_variance"
+            style="@style/alt_row_value_text"
+            android:gravity="end"
+            android:visibility="visible"
+            tools:text="variance"/>
+        <TextView
+            android:id="@+id/supervisor_variance_error"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat="@drawable/ic_error"
+            android:gravity="end"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/supervisor_actual_layout"
+        android:layout_weight="1.02"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="5dp">
+        <TextView
+            android:id="@+id/supervisor_actual"
+            style="@style/alt_row_value_text"
+            android:gravity="end"
+            android:visibility="visible"
+            android:drawablePadding="@dimen/_5sdp"
+            tools:text="actual"/>
+        <TextView
+            android:id="@+id/supervisor_actual_error"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat="@drawable/ic_error"
+            android:gravity="end"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/supervisor_error_ceo_period_range_kpi"
+        style="@style/data_unavailable_text_style"
+        android:layout_weight="3.0"
+        android:visibility="gone"
+         />
+
+</LinearLayout>

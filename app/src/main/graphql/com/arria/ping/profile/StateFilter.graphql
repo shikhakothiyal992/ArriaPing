@@ -1,0 +1,5 @@
+query StateFilter($areas:[String!]){
+  user {
+    states(areas:$areas)
+  }
+}

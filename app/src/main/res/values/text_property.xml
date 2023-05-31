@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <style name="text_header" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_medium</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+
+    <style name="text_value" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_medium</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="text_sub_heading" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_heavy</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+
+    <style name="final_text_price" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_bold</item>
+        <item name="android:textSize">@dimen/_22ssp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+
+    </style>
+
+    <style name="final_text_date" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_bold</item>
+        <item name="android:textSize">@dimen/_35ssp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+
+    </style>
+    <style name="text_inside_circle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_compact_text_bold</item>
+        <item name="android:textSize">@dimen/_9sdp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+
+    </style>
+    <style name="row_text" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textColor">@color/neutral</item>
+        <item name="android:drawablePadding">@dimen/_5sdp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:fontFamily">@font/sf_ui_text_medium</item>
+    </style>
+
+    <style name="row_text_header" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_heavy</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+    </style>
+    <style name="row_text_header_goal" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_compact_text_bold</item>
+        <item name="android:textSize">@dimen/_8sdp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+    </style>
+    <style name="myTextInputLabel" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorHint">@color/header_color</item>
+        <item name="colorAccent">@color/header_color</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="colorControlActivated">@color/header_color</item>
+        <item name="colorControlHighlight">@color/header_color</item>
+        <item name="android:height">@dimen/_30sdp</item>
+        <item name="boxBackgroundColor">@color/border_color</item>
+
+    </style>
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:fontFamily">@font/sf_ui_text_bold</item>
+        <item name="android:textColor">@color/bottom_nav_unselected</item>
+    </style>
+    <style name="BottomNavigationViewInactive" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:fontFamily">@font/sf_ui_text_regular</item>
+        <item name="android:textColor">@color/bottom_nav_inactive</item>
+    </style>
+    <style name="button" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_40sdp</item>
+        <item name="android:fontFamily">@font/sf_ui_text_heavy</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/dark_black_button_opacity_13</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginLeft">@dimen/_30sdp</item>
+        <item name="android:layout_marginRight">@dimen/_30sdp</item>
+
+    </style>
+
+    <style name="CalenderViewCustom">
+        <item name="android:textColorPrimaryInverse">@color/black</item>
+        <item name="android:colorControlActivated">@color/border_color</item>
+        <item name="android:textAppearance">@font/sf_ui_text_heavy</item>
+
+    </style>
+    <style name="confirmation_view" >
+        <item name="android:layout_width">@dimen/_30sdp</item>
+        <item name="android:layout_height">@dimen/_30sdp</item>
+        <item name="android:fontFamily">@font/sf_ui_text_heavy</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+        <item name="android:textColor">@color/border_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="background">@drawable/button_border</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:layout_marginStart">@dimen/_10sdp</item>
+
+    </style>
+    <style name="level_two_data" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_heavy</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:top">8dp</item>
+    </style>
+    <style name="level_two_items" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_medium</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:drawablePadding">@dimen/_5sdp</item>
+    </style>
+    <style name="NoActionBar" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="filter_items" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_heavy</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:layout_marginTop">@dimen/_8sdp</item>
+        <item name="android:paddingTop">@dimen/_5sdp</item>
+        <item name="android:paddingBottom">@dimen/_5sdp</item>
+        <item name="buttonTint">@color/period_radio_button_color_selector</item>
+    </style>
+    <style name="horizontal_divider" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_2sdp</item>
+        <item name="android:background">@drawable/horizontal_line</item>
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+    </style>
+    <style name="level_two_goal_and_variance" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:fontFamily">@font/sf_ui_text_heavy</item>
+        <item name="android:textColor">@color/level_two_goal</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textSize">@dimen/_11sdp</item>
+
+    </style>
+    <style name="level_two_goal_and_variance_value" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:fontFamily">@font/sf_ui_text_bold</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+
+    </style>
+    <style name="store_details" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_regular</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+    <style name="cross_button_parent" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_50sdp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="cross_button" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/cancel</item>
+        <item name="android:padding">@dimen/_8sdp</item>
+        <item name="android:layout_marginStart">@dimen/_18sdp</item>
+    </style>
+    <style name="filter_text" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_regular</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textColor">@color/neutral</item>
+        <item name="android:drawablePadding">@dimen/_5sdp</item>
+    </style>
+    <style name="expandable_view" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fadeScrollbars">true</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:nestedScrollingEnabled">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:divider">@null</item>
+        <item name="android:childDivider">@null</item>
+        <item name="android:layout_marginTop">@dimen/_10sdp</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:layout_marginStart">@dimen/_4sdp</item>
+        <item name="android:groupIndicator">@null</item>
+        <item name="android:drawablePadding">@dimen/_5sdp</item>
+
+    </style>
+    <style name="over_view_text" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_medium</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textColor">@color/neutral</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+        <item name="android:layout_marginTop">@dimen/_15sdp</item>
+        <item name="android:layout_marginStart">@dimen/_10sdp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="level_two_data_top_header" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_heavy</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:top">8dp</item>
+    </style>
+    <style name="level_two_goal_and_variance_header" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:fontFamily">@font/sf_ui_text_regular</item>
+        <item name="android:textColor">@color/level_two_goal</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+
+    </style>
+    <style name="level_two_items_sub_header" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_medium</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:drawablePadding">@dimen/_5sdp</item>
+    </style>
+    <style name="level_two_data_narrative" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:layout_marginTop">@dimen/_15sdp</item>
+    </style>
+
+    <style name="level_two_data_narrative1" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_marginTop">@dimen/_15sdp</item>
+    </style>
+
+    <style name="level_two_scroll_data_action" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:fontFamily">@font/sf_ui_text_heavy</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:layout_marginStart">@dimen/_5sdp</item>
+
+    </style>
+    <style name="level_two_scroll_data_value" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:fontFamily">@font/sf_ui_text_bold</item>
+        <item name="android:textColor">@color/neutral</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:gravity">end</item>
+        <item name="android:drawablePadding">@dimen/_5sdp</item>
+
+    </style>
+    <style name="search_view" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlActivated">@color/black</item>
+        <item name="searchIcon">@drawable/ic_search_icon</item>
+
+    </style>
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">@dimen/_9sdp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/sf_ui_text_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="action_food" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_ui_text_heavy</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_11sdp</item>
+        <item name="android:layout_marginTop">@dimen/_15sdp</item>
+
+    </style>
+    <style name="action_food_failed" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/sf_compact_text_lightitalic</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+    <style name="action_circle_view" >
+        <item name="android:layout_width">@dimen/_8sdp</item>
+        <item name="android:layout_height">@dimen/_8sdp</item>
+        <item name="android:layout_marginStart">@dimen/_6sdp</item>
+    </style>
+    <style name="action_circle_view_past_action" >
+        <item name="android:layout_width">@dimen/_13sdp</item>
+        <item name="android:layout_height">@dimen/_13sdp</item>
+        <item name="android:layout_marginStart">@dimen/_6sdp</item>
+    </style>
+    <style name="alert_button" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="background">@color/red</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/_10sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_10sdp</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_11sdp</item>
+        <item name="android:padding">@dimen/_11sdp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">bottom|center</item>
+        <item name="android:drawablePadding">@dimen/_8sdp</item>
+        <item name="drawableStartCompat">@drawable/ic_alert_icon</item>
+        <item name="android:visibility">visible</item>
+
+    </style>
+    <style name="dotted_horizontal_line" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_5sdp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/_18sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_11sdp</item>
+        <item name="background">@drawable/dotted_horizontal_line</item>
+    </style>
+    <style name="horizontal_divider_level_two" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_5sdp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginEnd">@dimen/_10sdp</item>
+        <item name="android:layout_marginTop">@dimen/_20sdp</item>
+    </style>
+    <style name="empty_view" >
+        <item name="android:layout_width">@dimen/_18sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="alt_row_display_text" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">0.94</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/sf_ui_text_heavy</item>
+    </style>
+
+    <style name="alt_row_sub_display_text" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">0.94</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/sf_ui_text_medium</item>
+    </style>
+
+    <style name="alt_row_value_text" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1.02</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/sf_ui_text_medium</item>
+    </style>
+
+    <style name="alt_row_display_text_goal_variance_actual" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1.02</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/sf_compact_text_bold</item>
+    </style>
+    <style name="alt_row_display_text_actual" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1.1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/sf_compact_text_bold</item>
+    </style>
+    <style name="SmallerCalendarText" parent="@android:style/TextAppearance.Large">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAppearance">@font/sf_ui_text_medium</item>
+
+    </style>
+    <style name="alt_row_value_text_actual" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1.02</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/sf_ui_text_bold</item>
+    </style>
+
+
+    <style name="search_view_style" >
+        <item name="searchHintIcon">@null</item>
+    </style>
+
+    <style name="data_unavailable_text_style" >
+        <item name="android:text">@string/data_unavailable</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:gravity">end</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textColor">@color/data_unavailable_text_color</item>
+        <item name="android:fontFamily">@font/sf_ui_text_regular</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:drawableEnd">@drawable/ic_error</item>
+        <item name="android:drawablePadding">@dimen/_5sdp</item>
+    </style>
+
+    <style name="data_unavailable_overview_text_style" >
+        <item name="android:text">@string/data_unavailable</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:gravity">end</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textColor">@color/data_unavailable_text_color</item>
+        <item name="android:fontFamily">@font/sf_ui_text_regular</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:layout_marginEnd">@dimen/_10sdp</item>
+    </style>
+
+    <style name="welcome_login_text_style" >
+        <item name="android:text">@string/welcome_login_button_text</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">@dimen/_45sdp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/sf_ui_text_regular</item>
+        <item name="android:layout_marginEnd">@dimen/_12sdp</item>
+        <item name="android:layout_marginStart">@dimen/_26sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_24sdp</item>
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:background">@drawable/round_corner_blue__background</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

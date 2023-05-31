@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+    <LinearLayout
+            android:id="@+id/linear_parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_170sdp"
+            android:background="@color/header_color"
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:visibility="gone"
+                app:drawableStartCompat="@mipmap/logo" />
+
+        <ImageView
+                android:id="@+id/filter_icon"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:visibility="invisible"
+                android:src="@drawable/filter" />
+
+        <LinearLayout
+                android:id="@+id/bonus_filter_parent_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/store_id"
+                    android:textStyle="bold"
+                    style="@style/store_details" />
+
+            <View
+                    android:id="@+id/view_for_ceo_view"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@color/white" />
+
+            <TextView
+                    android:id="@+id/period_range"
+                    style="@style/store_details" />
+
+            <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@color/white" />
+
+            <TextView
+                    android:id="@+id/store_header"
+                    style="@style/store_details" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/bonus_error_filter_parent_linear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_7sdp"
+                tools:visibility="visible"
+                android:visibility="gone">
+
+            <TextView
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/bonus_header_error_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:id="@+id/filter_bonus_text"
+                    style="@style/store_details" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/total_sales_common_header_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/big_green_circle"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_110sdp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_marginTop="@dimen/_15sdp"
+                android:id="@+id/total_sales_common_header"
+                android:layout_marginBottom="@dimen/_25sdp"
+                style="@style/final_text_date"
+                android:textSize="@dimen/_38ssp"
+                tools:text="28"
+                />
+
+        <TextView
+                android:id="@+id/sales_text_common_header"
+                android:layout_marginTop="-40dp"
+                android:textSize="@dimen/_8ssp"
+                android:text="@string/days_to_go"
+                style="@style/text_inside_circle" />
+
+        <ImageView
+                android:id="@+id/image_bonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:src="@drawable/ic_data_unavailbale_error"
+                android:contentDescription="@string/data_unavailable" />
+    </LinearLayout>
+</FrameLayout>

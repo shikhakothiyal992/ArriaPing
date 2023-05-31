@@ -1,0 +1,7 @@
+mutation RegisterDevice($userId:String!,$deviceToken:String!,$deviceType:String!){
+  registerDevice(userId:$userId,deviceToken:$deviceToken,deviceType:$deviceType){
+    userId
+    deviceToken
+    deviceType
+  }
+}

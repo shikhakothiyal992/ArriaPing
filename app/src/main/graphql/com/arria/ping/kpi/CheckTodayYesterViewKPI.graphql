@@ -1,0 +1,25 @@
+query CheckTodayYesterdayView($storeNumber:String!) {
+
+    generalManager {
+    kpis{
+        store (storeNumber:$storeNumber) {
+                    storeName
+
+                    storeNumber
+
+                    storeStartTime
+
+                    storeEndTime
+
+                    bussinessDate
+
+                    currentHour
+
+                    bussinessStartDay
+
+                    bussinessLastDay
+    }
+
+}
+}
+}

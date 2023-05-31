@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.filter.FilterActivity"
+    android:background="@android:color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/common_header"
+                layout="@layout/common_view_for_pop_up" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/linear_curve"
+                android:orientation="vertical">
+                <include
+                    layout="@layout/common_small_horizontal_line_header" />
+                <include
+                    android:id="@+id/common_header_filter"
+                    layout="@layout/common_header_filter_initial_screen"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@color/opacity_30"
+                    android:gravity="center"
+                    android:orientation="vertical" />
+
+                <LinearLayout
+                    android:id="@+id/period_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/filter_text"
+                            android:text="@string/period_text" />
+
+
+                        <TextView
+                            android:id="@+id/period_select"
+                            style="@style/filter_text"
+                            android:ellipsize="end"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:text="@string/yesterday_text"
+                            android:textColor="@color/header_color" />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:contentDescription=""
+                            android:foregroundGravity="center"
+                            android:visibility="gone"
+                            android:src="@drawable/ic_filter_arrow" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/period_selection_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/today_select"
+                            style="@style/filter_items"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:gravity="end"
+                            android:text="@string/today_text" />
+
+                        <TextView
+                            android:id="@+id/yesterday_select"
+                            style="@style/filter_items"
+                            android:layout_gravity="end"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:gravity="end"
+                            android:text="@string/yesterday_text" />
+
+                        <TextView
+                            android:id="@+id/this_week_select"
+                            style="@style/filter_items"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:gravity="end"
+                            android:text="@string/wtd_text" />
+
+                        <TextView
+                            android:id="@+id/last_week_select"
+                            style="@style/filter_items"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:gravity="end"
+                            android:text="@string/last_week_text" />
+
+                        <TextView
+                            android:id="@+id/this_month_select"
+                            style="@style/filter_items"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:gravity="end"
+                            android:text="@string/mtd_text" />
+
+                        <TextView
+                            android:id="@+id/last_month_select"
+                            style="@style/filter_items"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:gravity="end"
+                            android:text="@string/last_month_text" />
+
+                        <TextView
+                            android:id="@+id/this_year_select"
+                            style="@style/filter_items"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:gravity="end"
+                            android:text="@string/ytd_text" />
+
+                        <TextView
+                            android:id="@+id/last_year_select"
+                            style="@style/filter_items"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:gravity="end"
+                            android:text="@string/last_year_text" />
+
+                        <TextView
+                            android:id="@+id/last_seven_days_select"
+                            style="@style/filter_items"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:gravity="end"
+                            android:text="@string/last_seven_days_text" />
+
+                        <TextView
+                            android:id="@+id/last_twenty_eight_days_select"
+                            style="@style/filter_items"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:gravity="end"
+                            android:text="@string/last_twenty_eight_days" />
+
+                        <TextView
+                            android:id="@+id/custom_range_select"
+                            style="@style/filter_items"
+                            android:fontFamily="@font/sf_ui_text_regular"
+                            android:gravity="end"
+                            android:text="@string/custom_range_text" />
+                    </LinearLayout>
+
+                    <com.archit.calendardaterangepicker.customviews.DateRangeCalendarView
+                        android:id="@+id/calendar_custom_range"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        custom:date_selection_mode="free_range"
+                        custom:disable_date_color="@color/disable_date_color"
+                        custom:range_color="@color/light_blue"
+                        custom:selected_date_circle_color="@color/light_blue"
+                        custom:text_size_date="0dp"
+                        custom:text_size_title="@dimen/_10sdp"
+                        custom:text_size_week="@dimen/_10sdp"
+                        custom:title_color="@color/black" />
+
+                    <View style="@style/horizontal_divider" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/other_filter_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_25sdp"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/area_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/filter_text"
+                            android:text="@string/area_text" />
+
+                        <TextView
+                            android:id="@+id/area__select"
+                            style="@style/filter_text"
+                            android:ellipsize="end"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/header_color"
+                            android:text="@string/select_text" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:contentDescription=""
+                            android:foregroundGravity="center"
+                            android:src="@drawable/ic_filter_arrow" />
+
+                    </LinearLayout>
+
+                    <View style="@style/horizontal_divider"
+                        android:id="@+id/area_view"/>
+
+                    <LinearLayout
+                        android:id="@+id/state_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp">
+
+                        <TextView
+                            style="@style/filter_text"
+                            android:text="@string/state_text" />
+
+                        <TextView
+                            android:id="@+id/state_select"
+                            style="@style/filter_text"
+                            android:ellipsize="end"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/header_color"
+                            android:text="@string/select_text" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            
+                            android:foregroundGravity="center"
+                            android:src="@drawable/ic_filter_arrow" />
+                    </LinearLayout>
+
+                    <View style="@style/horizontal_divider"
+                        android:id="@+id/state_view"/>
+
+                    <LinearLayout
+                        android:id="@+id/supervisor_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp">
+
+                        <TextView
+                            style="@style/filter_text"
+                            android:text="@string/supervisor_text_caps" />
+
+                        <TextView
+                            android:id="@+id/supervisor_select"
+                            style="@style/filter_text"
+                            android:ellipsize="end"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/header_color"
+                            android:text="@string/select_text" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            
+                            android:foregroundGravity="center"
+                            android:src="@drawable/ic_filter_arrow" />
+
+                    </LinearLayout>
+                    <View style="@style/horizontal_divider"
+                        android:id="@+id/supervisor_view"/>
+                    <LinearLayout
+                        android:id="@+id/store_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp">
+
+                        <TextView
+                            style="@style/filter_text"
+                            android:text="@string/restaurant_text" />
+
+
+                        <TextView
+                            android:id="@+id/store_select"
+                            style="@style/filter_text"
+                            android:ellipsize="end"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/header_color"
+                            android:text="@string/select_text" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            
+                            android:foregroundGravity="center"
+                            android:src="@drawable/ic_filter_arrow" />
+
+                    </LinearLayout>
+
+                    <View style="@style/horizontal_divider" />
+                </LinearLayout>
+                <View
+                    android:id="@+id/empty_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/btn_apply"
+        style="@style/button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:background="@drawable/button_border_blue"
+        android:text="@string/apply_text"
+        android:textColor="@color/header_color" />
+</RelativeLayout>

@@ -1,0 +1,20 @@
+query GMAlerts ($storeNumber:String!) {
+  generalManager {
+    alerts {
+      store (storeNumber:$storeNumber) {
+        storeName
+        storeNumber
+        currentAlerts {
+          alertTitle
+          narrative
+          alertCreatedOn
+        }
+        pastAlerts {
+          alertTitle
+          narrative
+          alertCreatedOn
+        }
+      }
+    }
+  }
+}

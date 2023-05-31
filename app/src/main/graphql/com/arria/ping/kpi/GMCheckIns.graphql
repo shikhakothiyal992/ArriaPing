@@ -1,0 +1,29 @@
+query GMCheckIns ($storeNumber: String!) {
+  generalManager {
+    checkIns {
+      store (storeNumber:$storeNumber) {
+        storeName
+        storeNumber
+        currentCheckIns {
+          createdOn
+          status
+          checkInDetails {
+            title
+            narrative
+            createdOn
+          }
+        }
+        pastCheckIns {
+          createdOn
+          status
+          checkInDetails {
+            title
+            narrative
+            createdOn
+          }
+        }
+      }
+    }
+  }
+}
+

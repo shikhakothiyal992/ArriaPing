@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|center"
+    android:gravity="center"
+    android:background="@android:color/white">
+    <Button
+        android:id="@+id/notification_button"
+        style="@style/alert_button"
+        android:background="@drawable/alert_border"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:text="4pm check-in" />
+</LinearLayout>

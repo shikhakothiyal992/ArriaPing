@@ -1,0 +1,22 @@
+query MissingData(
+  $areaCodes: [String!]
+  $stateCodes: [String!]
+  $supervisorNumbers: [String!]
+  $storeNumbers: [String!]
+    $filterType: filterType
+  $rangeFrom: String
+    $rangeTo: String
+) {
+  missingData(
+    areaCodes: $areaCodes
+    stateCodes: $stateCodes
+    supervisorNumbers: $supervisorNumbers
+    storeNumbers: $storeNumbers
+    filterType: $filterType
+    rangeFrom: $rangeFrom
+        rangeTo: $rangeTo
+  ) {
+    header
+    message
+  }
+}
